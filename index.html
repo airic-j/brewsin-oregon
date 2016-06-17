@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewsin Oregon</title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Fly Starter Kit">
+    <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Fly Starter Kit">
+    <link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" />
+    <link rel="stylesheet" href="styles/css/style.css">
+
+    <!-- handlebars template -->
+    <script id="rideTemplate" type="text/x-handlebars-template">
+      <ul>
+        <li id="title" class="rideName"><a href="/rides/{{id}}">{{title}}</a></li>
+        <li><img id="rideImage" class='rideImages' src="{{img}}"></li>
+        <li id="description" class="rideDescription">{{description}}</li>
+      </ul>
+    </script>
+  </head>
+  <body>
+  <div class="row">
+    <div class="columns eight center">
+      <h1>Brewsin' Oregon</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns eight center">
+      <section id="rides">
+        <h2>Rides</h2>
+      </section>
+    </div>
+  </div>
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your sites ID -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js'></script>
+    <script src='scripts/indexView.js'></script>
+    <script src='scripts/rideDetailView.js'></script>
+
+    <script src='scripts/indexController.js'></script>
+    <script src='scripts/rideDetailController.js'></script>
+
+
+    <script src="/vendor/page.js"></script>
+    <script src="/scripts/routes.js"></script>
+
+  </body>
+</html>
