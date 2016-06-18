@@ -2,6 +2,7 @@
 
   // create Ride object
   function Ride(x) {
+    this.id = x.id;
     this.name = x.name;
     this.img = x.img;
     this.description = x.description;
@@ -29,6 +30,7 @@
     webDB.execute(
       // what SQL command do we run here inside these quotes?
       'CREATE TABLE IF NOT EXISTS rides (' +
+          'id INTEGER, ' +
           'name VARCHAR(255) NOT NULL, ' +
           'description VARCHAR(255), ' +
           'img VARCHAR(255), ' +
@@ -42,8 +44,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (name, description, img, distance) VALUES (?, ?, ?, ?);',
-              data: [this.name, this.description, this.img, this.distance]
+              sql: 'INSERT INTO rides (id, name, description, img, distance) VALUES (?, ?, ?, ?, ?);',
+              data: [this.id, this.name, this.description, this.img, this.distance]
             }
         ],
     callback);
