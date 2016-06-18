@@ -221,4 +221,7 @@ div .column .center {
   float: none !important;
   text-align: center; }
 
+#routeForm input[type=text] {
+  display: block; }
+
 /*# sourceMappingURL=style.css.map */

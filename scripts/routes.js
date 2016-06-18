@@ -1,3 +1,4 @@
 page('/', indexController.index);
-page('/rides', rideDetailController.index);
+page('/rides', rideController.index);
+page('/admin', adminController.index);
 page();

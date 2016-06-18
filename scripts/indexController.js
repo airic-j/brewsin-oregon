@@ -2,9 +2,9 @@
   var indexController = {};
 
   indexController.index = function() {
-    console.log('should initialize indexController init');
-    rideModule.init();
+    console.log('index initialized');
+    indexView.init();
   };
-  
+
   module.indexController = indexController;
 })(window);
