@@ -26,6 +26,16 @@
       </div>
     </script>
 
+    <script id="rideDetailTemplate" type="text/x-handlebars-template">
+      <div class="row">
+        <div class="columns twelve center">
+          <div class="ride">
+            <h3>Ride Details for {{name}}</h3>
+          </div>
+        </div>
+      </div>
+    </script>
+
   </head>
 
   <body>
@@ -60,6 +70,16 @@
     <!-- rides to be populated here -->
   </section>
 
+  <section id="rideDetails">
+    <div class="row">
+      <div class="columns twelve">
+        <h2>Ride Details</h2>
+        <!-- ride details to be populated here -->
+      </div>
+    </div>
+    <!-- rides to be populated here -->
+  </section>
+
   <section id="admin">
     <div class="row">
       <div class="columns twelve">
@@ -88,10 +108,12 @@
 
     <script src='scripts/indexView.js'></script>
     <script src='scripts/rideView.js'></script>
+    <script src='scripts/rideDetailView.js'></script>
     <script src='scripts/adminView.js'></script>
 
     <script src='scripts/indexController.js'></script>
     <script src='scripts/rideController.js'></script>
+    <script src='scripts/rideDetailController.js'></script>
     <script src='scripts/adminController.js'></script>
 
     <script src="/scripts/routes.js"></script>
