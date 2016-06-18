@@ -9,14 +9,13 @@
     <a href="/admin">admin</a>
 
     <!-- Your styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" />
     <link rel="stylesheet" href="styles/css/style.css">
 
     <script id="rideTemplate" type="text/x-handlebars-template">
       <div class="row">
         <div class="columns twelve center">
           <div class="ride">
-            <h3><a href="/{id}">{{name}}</a></h3>
+            <h3><a href="rides/{{id}}">{{name}}</a></h3>
             <img class="rideImage columns six" src="{{img}}"/>
             <iframe class="rideMap columns six" src="{{map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             <p class="columns twelve">
