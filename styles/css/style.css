@@ -355,6 +355,41 @@ html, body {
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif; }
 
+header {
+  height: 550px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("../../images/hero-v1.jpg");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.nav {
+  height: 60px;
+  padding: 0 10%;
+  color: #ffffff; }
+
+#title {
+  font-weight: 300;
+  font-size: 1.5em; }
+
+#navLinks {
+  width: 100%;
+  float: left;
+  font-weight: 300; }
+
+nav ul {
+  list-style-type: none;
+  overflow: auto;
+  padding-left: 0; }
+nav li {
+  float: left;
+  margin: 0px 10px;
+  text-align: left; }
+nav li:last-child {
+  float: right; }
+
 .rideImages {
   width: 200px;
   height: 200px; }
