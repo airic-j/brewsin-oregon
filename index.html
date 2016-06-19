@@ -14,11 +14,11 @@
         <div class="columns twelve center">
           <div class="ride">
             <h3><a href="rides/{{id}}">{{name}}</a></h3>
-            <img class="rideImage columns six" src="{{img}}"/>
-            <iframe class="rideMap columns six" src="{{map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            <p class="columns twelve">
-              {{description}}
-            </p>
+            <p>A long ride with beach views and sometimes blue skies</p>
+            <img class="rideImage" src="{{rideImage1}}"/>
+            <img class="rideImage" src="{{rideImage2}}"/>
+            <img class="rideImage" src="{{rideImage3}}"/>
+            <span class="viewDetail"><a href="rides/{{id}}">Explore ride<a></span>
           </div>
         </div>
       </div>
@@ -27,56 +27,65 @@
     <script id="rideDetailTemplate" type="text/x-handlebars-template">
       <div class="row">
         <div class="columns twelve center">
-          <div class="ride">
+          <div class="rideDetail">
             <h3>Ride Details for {{name}}</h3>
+            <ul>
+              <li>Details:</li>
+              <li>{{distance}} miles</li>
+              <li>~1400 feet elevation gain</li>
+              <li>Moderate difficulty</li>
+              <li>Currently 85&#176; F</li>
+            </ul>
+            <p>{{description}}</p>
+            <iframe class="rideMap" src="{{map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <img class="rideImage" src="{{rideImage1}}"/>
+            <img class="rideImage" src="{{rideImage2}}"/>
+            <img class="rideImage" src="{{rideImage3}}"/>
           </div>
         </div>
       </div>
     </script>
-
   </head>
 
   <body>
-  <header>
-    <div class="row">
-      <div class="columns whole nav">
-        <nav id="navLinks">
-          <ul>
-            <li id="title"><a href="/">Brewsin' Oregon</a></li>
-            <li><a href="/rides">Rides</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="/admin">admin</a></li>
-          </ul>
-        </nav>
-
-
-
-      </div>
+  <div class="row nav">
+    <div class="columns whole ">
+      <nav id="navLinks">
+        <ul>
+          <li id="title"><a href="/">Brewsin' Oregon</a></li>
+          <li><a href="/rides">Rides</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="/admin">admin</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
 
   <section id="home">
-    <div class="row">
-      <div class="columns twelve center">
-        <h2>Welcome</h2>
-        <p>
-          Welcome to Brewsin' Oregon, where you can discover cycling routes
-          throughtout Oregon that take you from pint to pint at different breweries
-          in the state. Click <a href="/rides">here</a> to start exploring routes.
-        </p>
+    <div class="home-header">
+      <div class="row">
+        <div class="columns twelve center welcome">
+          <h2>Discover Oregon</h2>
+          <span>by riding pint to pint</span>
+          <p>
+            Welcome to Brewsin' Oregon, where you can discover cycling routes
+            throughtout Oregon that take you from pint to pint at different breweries
+            in the state. <br /><br /><a href="/rides">Start exploring!</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="rides">
-    <div class="row">
+    <!-- <div class="row">
       <div class="columns twelve">
         <h2>Rides</h2>
         <p>
           Here are some rides!
         </p>
       </div>
-    </div>
+    </div> -->
     <!-- rides to be populated here -->
   </section>
 

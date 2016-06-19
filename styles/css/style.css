@@ -355,23 +355,20 @@ html, body {
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif; }
 
-header {
-  height: 550px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-image: url("../../images/hero-v1.jpg");
-  background-repeat: no-repeat;
-  background-position: center; }
+a:visited {
+  color: #a8a8a8; }
+
+a {
+  text-decoration: none; }
 
 .nav {
+  left: 0;
+  top: 0;
   height: 60px;
-  padding: 0 10%;
-  color: #ffffff; }
+  text-align: left; }
 
 #title {
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.5em; }
 
 #navLinks {
@@ -379,20 +376,91 @@ header {
   float: left;
   font-weight: 300; }
 
-nav ul {
-  list-style-type: none;
-  overflow: auto;
-  padding-left: 0; }
-nav li {
-  float: left;
-  margin: 0px 10px;
-  text-align: left; }
-nav li:last-child {
-  float: right; }
+nav {
+  z-index: 100;
+  position: absolute; }
+  nav ul {
+    list-style-type: none;
+    overflow: auto;
+    padding-left: 0;
+    width: 90%; }
+  nav li {
+    float: left;
+    margin-right: 20px;
+    text-align: left; }
+  nav li a {
+    color: #a8a8a8; }
 
-.rideImages {
-  width: 200px;
-  height: 200px; }
+.home-header {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/hero-v2.jpg");
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.welcome {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 40px;
+  font-family: helvetica;
+  font-weight: 300;
+  margin-top: 150px; }
+  .welcome h2 {
+    font-size: 3.0em;
+    font-weight: 200;
+    margin-bottom: 10px; }
+  .welcome span {
+    font-size: 1.5em; }
+  .welcome p {
+    font-size: 1.2em;
+    width: 75%;
+    margin: 30px auto; }
+  .welcome a {
+    color: #ffffff; }
+
+.ride, .rideDetail {
+  margin-bottom: 60px;
+  text-align: center; }
+  .ride h3, .rideDetail h3 {
+    font-weight: 300;
+    font-size: 1.8em;
+    margin-bottom: 10px; }
+  .ride .rideImage, .rideDetail .rideImage {
+    width: 31%;
+    max-width: 32%;
+    margin-right: 3%; }
+  .ride .rideImage:last-of-type, .rideDetail .rideImage:last-of-type {
+    margin-right: 0%; }
+  .ride .viewDetail, .rideDetail .viewDetail {
+    margin: 0 auto;
+    text-align: center; }
+  .ride .rideMap, .rideDetail .rideMap {
+    width: 100%;
+    height: 300px;
+    margin: 30px 0; }
+
+.rideDetail h3 {
+  font-weight: 300;
+  font-size: 1.5em; }
+.rideDetail ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin: auto;
+  width: 80%; }
+.rideDetail li {
+  float: left;
+  margin-right: 20px; }
+.rideDetail p {
+  display: inline-block;
+  text-align: left; }
 
 div .column .center {
   margin: 0 auto !important;

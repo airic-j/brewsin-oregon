@@ -4,9 +4,12 @@
   function Ride(x) {
     this.id = x.id;
     this.name = x.name;
-    this.img = x.img;
+    this.rideImage1 = x.rideImage1;
+    this.rideImage2 = x.rideImage2;
+    this.rideImage3 = x.rideImage3;
     this.description = x.description;
     this.distance = x.distance;
+    this.map = x.map;
   }
 
   Ride.all = [];
@@ -33,8 +36,11 @@
           'id INTEGER, ' +
           'name VARCHAR(255) NOT NULL, ' +
           'description VARCHAR(255), ' +
-          'img VARCHAR(255), ' +
-          'distance INTEGER NOT NULL);',
+          'rideImage1 VARCHAR(255), ' +
+          'rideImage2 VARCHAR(255), ' +
+          'rideImage3 VARCHAR(255), ' +
+          'distance INTEGER NOT NULL, ' +
+          'map VARCHAR(255) );',
           myCallback
     );
   };
@@ -44,8 +50,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (id, name, description, img, distance) VALUES (?, ?, ?, ?, ?);',
-              data: [this.id, this.name, this.description, this.img, this.distance]
+              sql: 'INSERT INTO rides (id, name, description, rideImage1, rideImage2, rideImage3, distance, map) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
+              data: [this.id, this.name, this.description, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.map]
             }
         ],
     callback);
