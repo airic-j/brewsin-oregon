@@ -1,11 +1,14 @@
 // general //
 
+$primary-gray: #a8a8a8;
+$primary-black: #585858;
+
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 a:visited {
-  color: #a8a8a8;
+  color: $primary-gray;
 }
 
 a {
@@ -32,7 +35,8 @@ a {
 
   #title {
     font-weight: 200;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    font-family: desdemona;
   }
 
   #navLinks {
@@ -56,10 +60,11 @@ a {
       float: left;
       margin-right: 20px;
       text-align: left;
+      font-size: 1.0em;
     }
 
     li a {
-      color: #a8a8a8;
+      color: $primary-gray;
     }
 
     // li:last-of-type {
@@ -95,16 +100,33 @@ a {
   margin-top: 40px;
   font-family: helvetica;
   font-weight: 300;
-  margin-top: 150px;
+  margin-top: 120px;
 
   h2 {
-    font-size: 3.0em;
+    font-size: 8.0em;
     font-weight: 200;
     margin-bottom: 10px;
+    font-family: desdemona;
   }
 
-  span {
-    font-size: 1.5em;
+  #byline {
+    font-size: 3.0em;
+    font-family: matura;
+    display: block;
+  }
+
+  button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 1.2em;
+    color: #ffffff;
+    width: 300px;
+    border: 1px solid #cdcdcd;
+    margin-top: 30px;
+    padding: 10px 0;
   }
 
   p {
@@ -123,29 +145,74 @@ a {
 
 // rides page //
 
+  #ridesTagLine {
+    color: $primary-gray;
+    margin-bottom: 20px;
+    font-size: 3.0em;
+  }
+
+  .ride {
+    border-left: 3px solid $primary-gray;
+    padding-left: 20px;
+  }
+
   .ride, .rideDetail {
     margin-bottom: 60px;
-    text-align: center;
 
-    h3 {
-      font-weight: 300;
-      font-size: 1.8em;
-      margin-bottom: 10px;
+    .rideName {
+      color: $primary-black;
+      font-family: helvetica;
+      font-weight: 600;
+      font-size: 2.0em;
+      margin: 0 10px 0 0;
+      text-align: left;
+      display: inline-block;
     }
 
-    .rideImage {
+    .rideTeaser {
+      color: $primary-black;
+      font-size: 1.3em;
+      margin-bottom: 0;
+    }
+
+    .rideBullets {
+      color: $primary-gray
+    }
+
+    .rideLocation {
+      font-size: 1.0em;
+      color: $primary-gray;
+    }
+
+    a {
+      color: $primary-gray;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+      margin: 20px auto;
+      width: 100%;
+      display: inline-block;
+    }
+
+    li {
+      float: left;
+      margin-right: 40px;
+    }
+
+    .rideImages {
+      display: block;
+    }
+
+    .rideImages img {
       width: 31%;
       max-width: 32%;
       margin-right: 3%;
     }
 
-    .rideImage:last-of-type {
+    .rideImages img:last-of-type {
       margin-right: 0%;
-    }
-
-    .viewDetail {
-      margin: 0 auto;
-      text-align: center;
     }
 
     .rideMap {
@@ -167,18 +234,6 @@ a {
   h3 {
     font-weight: 300;
     font-size: 1.5em;
-  }
-
-  ul {
-    padding-left: 0;
-    list-style-type: none;
-    margin: auto;
-    width: 80%;
-  }
-
-  li {
-    float: left;
-    margin-right: 20px;
   }
 
   p {

@@ -13,12 +13,20 @@
       <div class="row">
         <div class="columns twelve center">
           <div class="ride">
-            <h3><a href="rides/{{id}}">{{name}}</a></h3>
-            <p>A long ride with beach views and sometimes blue skies</p>
-            <img class="rideImage" src="{{rideImage1}}"/>
-            <img class="rideImage" src="{{rideImage2}}"/>
-            <img class="rideImage" src="{{rideImage3}}"/>
-            <span class="viewDetail"><a href="rides/{{id}}">Explore ride<a></span>
+            <a href="rides/{{id}}"><h3 class="rideName">{{name}}</h3></a>
+            <span class="rideLocation">Astoria to Cannon Beach</span>
+            <p class="rideTeaser">A rolling ride with beach views and if you're lucky, blue skies</p>
+            <ul class="rideBullets">
+              <li>{{distance}} miles</li>
+              <li>~1400 feet elevation gain</li>
+              <li>Currently 85&#176; F</li>
+              <li>2 beverage stops</li>
+            </ul>
+            <div class="rideImages">
+              <img src="{{rideImage1}}"/>
+              <img src="{{rideImage2}}"/>
+              <img src="{{rideImage3}}"/>
+            </div>
           </div>
         </div>
       </div>
@@ -28,19 +36,26 @@
       <div class="row">
         <div class="columns twelve center">
           <div class="rideDetail">
-            <h3>Ride Details for {{name}}</h3>
+            <h3 class="rideName">{{name}}</h3>
             <ul>
-              <li>Details:</li>
               <li>{{distance}} miles</li>
               <li>~1400 feet elevation gain</li>
               <li>Moderate difficulty</li>
               <li>Currently 85&#176; F</li>
             </ul>
+            <ul>
+              <li>Start</li>
+              <li>Stop Name</li>
+              <li>Stop Name</li>
+              <li>Finish</li>
+            </ul>
             <p>{{description}}</p>
             <iframe class="rideMap" src="{{map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            <img class="rideImage" src="{{rideImage1}}"/>
-            <img class="rideImage" src="{{rideImage2}}"/>
-            <img class="rideImage" src="{{rideImage3}}"/>
+            <div class="rideImages">
+              <img src="{{rideImage1}}"/>
+              <img src="{{rideImage2}}"/>
+              <img src="{{rideImage3}}"/>
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +67,7 @@
     <div class="columns whole ">
       <nav id="navLinks">
         <ul>
-          <li id="title"><a href="/">Brewsin' Oregon</a></li>
+          <li ><a href="/">TDH</a></li>
           <li><a href="/rides">Rides</a></li>
           <li><a href="#">About</a></li>
           <li><a href="/admin">admin</a></li>
@@ -65,28 +80,20 @@
     <div class="home-header">
       <div class="row">
         <div class="columns twelve center welcome">
-          <h2>Discover Oregon</h2>
-          <span>by riding pint to pint</span>
-          <p>
-            Welcome to Brewsin' Oregon, where you can discover cycling routes
-            throughtout Oregon that take you from pint to pint at different breweries
-            in the state. <br /><br /><a href="/rides">Start exploring!</a>
-          </p>
+          <h2>Tour de Hop</h2>
+          <span id="byline">Ride Pint to Pint</span>
+          <a href="/rides"><button>Start Exploring</button></a>
         </div>
       </div>
     </div>
   </section>
 
   <section id="rides">
-    <!-- <div class="row">
-      <div class="columns twelve">
-        <h2>Rides</h2>
-        <p>
-          Here are some rides!
-        </p>
+    <div class="row">
+      <div class="columns whole">
+        <h2 id="ridesTagLine">Explore rides in NE Oregon</h2>
       </div>
-    </div> -->
-    <!-- rides to be populated here -->
+    </div>
   </section>
 
   <section id="rideDetails">
