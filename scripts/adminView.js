@@ -80,6 +80,7 @@
     thisRide.img = $('#routeImg').val();
     thisRide.description = $('#routeDesc').val();
     thisRide.distance = $('#routeDistance').val();
+    // TODO save response object in db for map, then render maps based on object
 
     console.log(thisRide);
 
