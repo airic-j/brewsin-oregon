@@ -512,6 +512,10 @@ nav {
   display: inline-block;
   text-align: left; }
 
+#map {
+  height: 500px;
+  width: 500px; }
+
 div .column .center {
   margin: 0 auto !important;
   float: none !important;

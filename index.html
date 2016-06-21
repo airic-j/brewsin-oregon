@@ -56,6 +56,7 @@
               <img src="{{rideImage2}}"/>
               <img src="{{rideImage3}}"/>
             </div>
+            <a class="backToRides" href="/rides">View rides</a>
           </div>
         </div>
       </div>
@@ -117,6 +118,17 @@
           <input id="routeDistance" type="text" placeholder="route distance"/>
           <input id="routeSubmit" type="submit">
         </form>
+
+        <div id="floating-panel">
+          <b>Start: </b>
+          <input id="startAddress" type="textbox" placeholder="Start">
+          <b>End: </b>
+          <input id="endAddress" type="textbox" placeholder="Finish">
+          <input id="getDirections" type="button" value="Geocode"/>
+        </div>
+        <div id="map">
+        <!-- map goes here -->
+        </div>
       </div>
     </div>
   </section>
@@ -125,9 +137,10 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your sites ID -->
     <script src='vendor/scripts/jquery.js'></script>
-    <script src='vendor/scripts//handlebars.js'></script>
+    <script src='vendor/scripts/handlebars.js'></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
+
     <script src="/scripts/webdb.js"></script>
 
     <script src="/scripts/ride.js"></script>
@@ -141,6 +154,18 @@
     <script src='scripts/rideController.js'></script>
     <script src='scripts/rideDetailController.js'></script>
     <script src='scripts/adminController.js'></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE&callback=adminView.initMap" async defer></script>
+    <!-- <script>
+      var map;
+      function initMap() {
+        console.log('init map called');
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script> -->
 
     <script src="/scripts/routes.js"></script>
 
