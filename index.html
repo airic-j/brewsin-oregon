@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brewsin Oregon</title>
+    <title>Tour de Hops</title>
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/css/style.css">
 
@@ -18,7 +18,7 @@
             <p class="rideTeaser">A rolling ride with beach views and if you're lucky, blue skies</p>
             <ul class="rideBullets">
               <li>{{distance}} miles</li>
-              <li>~1400 feet elevation gain</li>
+              <li>{{elevation}} feet elevation gain</li>
               <li>Currently 85&#176; F</li>
               <li>2 beverage stops</li>
             </ul>
@@ -39,8 +39,8 @@
             <h3 class="rideName">{{name}}</h3>
             <ul>
               <li>{{distance}} miles</li>
-              <li>~1400 feet elevation gain</li>
-              <li>Moderate difficulty</li>
+              <li>{{elevation}} feet elevation gain</li>
+              <li>{{difficulty}} difficulty</li>
               <li>Currently 85&#176; F</li>
             </ul>
             <ul>
@@ -81,9 +81,9 @@
     <div class="home-header">
       <div class="row">
         <div class="columns twelve center welcome">
-          <h2>Tour de Hop</h2>
+          <h2>Tour de Hops</h2>
           <span id="byline">Ride Pint to Pint</span>
-          <a href="/rides"><button>Start Exploring</button></a>
+          <a href="/rides"><button>Explore the rides</button></a>
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@
   <section id="rides">
     <div class="row">
       <div class="columns whole">
-        <h2 id="ridesTagLine">Explore rides in NE Oregon</h2>
+        <h2 id="ridesTagLine">Explore rides in <span id="exploreLocation">Oregon</span></h2>
       </div>
     </div>
   </section>
@@ -115,7 +115,9 @@
           <input id="routeName" type="text" placeholder="route name"/>
           <input id="routeDesc" type="text" placeholder="description"/>
           <input id="routeImg" type="text" placeholder="route img"/>
-          <input id="routeDistance" type="text" placeholder="route distance"/>
+          <input id="routeDistance" type="text" placeholder="distance"/>
+          <input id="routeDifficulty" type="text" placeholder="difficulty"/>
+          <input id="routeElevation" type="text" placeholder="elevation"/>
           <input id="routeSubmit" type="submit">
         </form>
 
