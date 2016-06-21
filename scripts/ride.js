@@ -9,6 +9,8 @@
     this.rideImage3 = x.rideImage3;
     this.description = x.description;
     this.distance = x.distance;
+    this.elevation = x.elevation;
+    this.difficulty = x.difficulty;
     this.map = x.map;
   }
 
@@ -36,6 +38,8 @@
           'id INTEGER, ' +
           'name VARCHAR(255) NOT NULL, ' +
           'description VARCHAR(255), ' +
+          'elevation VARCHAR(255), ' +
+          'difficulty VARCHAR(255), ' +
           'rideImage1 VARCHAR(255), ' +
           'rideImage2 VARCHAR(255), ' +
           'rideImage3 VARCHAR(255), ' +
@@ -50,8 +54,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (id, name, description, rideImage1, rideImage2, rideImage3, distance, map) VALUES (?, ?, ?, ?, ?, ?, ?, ?);',
-              data: [this.id, this.name, this.description, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.map]
+              sql: 'INSERT INTO rides (id, name, description, elevation, difficulty,  rideImage1, rideImage2, rideImage3, distance, map) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+              data: [this.id, this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.map]
             }
         ],
     callback);

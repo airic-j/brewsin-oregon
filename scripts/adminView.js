@@ -74,15 +74,15 @@
 
   function newRide(event) {
     event.preventDefault();
-    console.log('rew ride');
     var thisRide = {};
     thisRide.name = $('#routeName').val();
     thisRide.img = $('#routeImg').val();
     thisRide.description = $('#routeDesc').val();
     thisRide.distance = $('#routeDistance').val();
-    // TODO save response object in db for map, then render maps based on object
+    thisRide.difficulty = $('#routeDifficulty').val();
+    thisRide.elevation = $('#routeElevation').val();
 
-    console.log(thisRide);
+    // TODO save response object in db for map, then render maps based on object
 
     newRide = new Ride(thisRide)
     newRide.insertRecord();
