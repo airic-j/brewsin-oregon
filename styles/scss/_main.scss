@@ -1,5 +1,6 @@
 // general //
 
+$primary-teal: #03b18d;
 $primary-gray: #a8a8a8;
 $primary-black: #585858;
 
@@ -60,7 +61,7 @@ a {
       float: left;
       margin-right: 20px;
       text-align: left;
-      font-size: 1.0em;
+      font-size: 1.3em;
     }
 
     li a {
@@ -122,11 +123,11 @@ a {
     overflow: hidden;
     outline:none;
     font-size: 1.2em;
-    color: #ffffff;
+    color: $primary-teal;
     width: 300px;
-    border: 1px solid #cdcdcd;
+    border: 1px solid $primary-teal;
     margin-top: 30px;
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
   p {
@@ -145,14 +146,20 @@ a {
 
 // rides page //
 
+
   #ridesTagLine {
     color: $primary-gray;
     margin-bottom: 20px;
     font-size: 3.0em;
   }
 
+  #exploreLocation {
+    text-decoration: underline;
+    color: $primary-teal;
+  }
+
   .ride {
-    border-left: 3px solid $primary-gray;
+    border-left: 3px solid $primary-teal;
     padding-left: 20px;
   }
 

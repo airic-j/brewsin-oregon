@@ -399,7 +399,7 @@ nav {
     float: left;
     margin-right: 20px;
     text-align: left;
-    font-size: 1.0em; }
+    font-size: 1.3em; }
   nav li a {
     color: #a8a8a8; }
 
@@ -441,11 +441,11 @@ nav {
     overflow: hidden;
     outline: none;
     font-size: 1.2em;
-    color: #ffffff;
+    color: #03b18d;
     width: 300px;
-    border: 1px solid #cdcdcd;
+    border: 1px solid #03b18d;
     margin-top: 30px;
-    padding: 10px 0; }
+    padding: 15px 0; }
   .welcome p {
     font-size: 1.2em;
     width: 75%;
@@ -458,8 +458,12 @@ nav {
   margin-bottom: 20px;
   font-size: 3.0em; }
 
+#exploreLocation {
+  text-decoration: underline;
+  color: #03b18d; }
+
 .ride {
-  border-left: 3px solid #a8a8a8;
+  border-left: 3px solid #03b18d;
   padding-left: 20px; }
 
 .ride, .rideDetail {
