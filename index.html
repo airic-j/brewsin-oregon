@@ -13,8 +13,8 @@
       <div class="row">
         <div class="columns twelve center">
           <div class="ride">
-            <a href="rides/{{id}}"><h3 class="rideName">{{name}}</h3></a>
-            <span class="rideLocation">Astoria to Cannon Beach</span>
+            <a href="/rides/{{id}}"><h3 class="rideName">{{name}}</h3></a>
+            <span class="rideLocation">{{start}} to {{end}}</span>
             <p class="rideTeaser">A rolling ride with beach views and if you're lucky, blue skies</p>
             <ul class="rideBullets">
               <li>{{distance}} miles</li>
@@ -50,13 +50,15 @@
               <li>Finish</li>
             </ul>
             <p>{{description}}</p>
-            <iframe class="rideMap" src="{{map}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div id="rideDetailMap">
+
+            </div>
+
             <div class="rideImages">
               <img src="{{rideImage1}}"/>
               <img src="{{rideImage2}}"/>
               <img src="{{rideImage3}}"/>
             </div>
-            <a class="backToRides" href="/rides">View rides</a>
           </div>
         </div>
       </div>
@@ -114,11 +116,20 @@
         <form id="routeForm">
           <input id="routeName" type="text" placeholder="route name"/>
           <input id="routeDesc" type="text" placeholder="description"/>
-          <input id="routeImg" type="text" placeholder="route img"/>
-          <input id="routeDistance" type="text" placeholder="distance"/>
+          <input id="routeImg1" type="text" placeholder="route img1"/>
+          <input id="routeImg2" type="text" placeholder="route img2"/>
+          <input id="routeImg3" type="text" placeholder="route img3"/>
           <input id="routeDifficulty" type="text" placeholder="difficulty"/>
           <input id="routeElevation" type="text" placeholder="elevation"/>
-          <input id="routeSubmit" type="submit">
+          <br />
+          <input id="routeMap" type="text" placeholder="route map"/>
+          <input id="routeDistance" type="text" placeholder="distance"/>
+          <input id="routeDuration" type="text" placeholder="distance"/>
+          <input id="routeStart" type="text" placeholder="start"/>
+          <input id="routeEnd" type="text" placeholder="end"/>
+
+
+          <input id="routeSubmit" type="submit" value="Create route">
         </form>
 
         <div id="floating-panel">
@@ -126,7 +137,7 @@
           <input id="startAddress" type="textbox" placeholder="Start">
           <b>End: </b>
           <input id="endAddress" type="textbox" placeholder="Finish">
-          <input id="getDirections" type="button" value="Geocode"/>
+          <input id="getDirections" type="button" value="Get directions"/>
         </div>
         <div id="map">
         <!-- map goes here -->

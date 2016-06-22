@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "name": "Cruise the Coast",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "distance": "20",
@@ -12,7 +11,6 @@
     "map": "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d44725.374392860285!2d-122.68551427881421!3d45.523445699886196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e1!4m3!3m2!1d45.5136399!2d-122.6912337!4m3!3m2!1d45.5056669!2d-122.640255!4m3!3m2!1d45.5208454!2d-122.6201261!4m3!3m2!1d45.5366328!2d-122.6098428!4m3!3m2!1d45.5413834!2d-122.6393798!4m3!3m2!1d45.5314219!2d-122.68138809999999!5e0!3m2!1sen!2sus!4v1466202833793"
   },
   {
-    "id": "2",
     "name": "Mt. Hood Hills Ride",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "distance": "30",
@@ -24,7 +22,6 @@
     "map": "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d44725.374392860285!2d-122.68551427881421!3d45.523445699886196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e1!4m3!3m2!1d45.5136399!2d-122.6912337!4m3!3m2!1d45.5056669!2d-122.640255!4m3!3m2!1d45.5208454!2d-122.6201261!4m3!3m2!1d45.5366328!2d-122.6098428!4m3!3m2!1d45.5413834!2d-122.6393798!4m3!3m2!1d45.5314219!2d-122.68138809999999!5e0!3m2!1sen!2sus!4v1466202833793"
   },
   {
-    "id": "3",
     "name": "Willamette River Trail Ride",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "distance": "20",
@@ -36,7 +33,6 @@
     "map": "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d44725.374392860285!2d-122.68551427881421!3d45.523445699886196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e1!4m3!3m2!1d45.5136399!2d-122.6912337!4m3!3m2!1d45.5056669!2d-122.640255!4m3!3m2!1d45.5208454!2d-122.6201261!4m3!3m2!1d45.5366328!2d-122.6098428!4m3!3m2!1d45.5413834!2d-122.6393798!4m3!3m2!1d45.5314219!2d-122.68138809999999!5e0!3m2!1sen!2sus!4v1466202833793"
   },
   {
-    "id": "4",
     "name": "Bridge to Bridge",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "distance": "30",

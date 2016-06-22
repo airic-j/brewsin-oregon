@@ -15,7 +15,7 @@
 
   // initialize map and other details
   adminView.initMap = function() {
-    console.log('initMap called');
+    console.log('initMap on adminpage called');
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer ({
       draggable: true
@@ -25,45 +25,42 @@
       center: {lat: +45.523, lng: -122.676}
     });
 
-    var geocoder = new google.maps.Geocoder();
-    // document.getElementById('getDirections').addEventListener('click', function() {
-    //     geocodeAddress(geocoder, map);
-    // });
     directionsDisplay.setMap(map);
 
     var onChangeHandler = function() {
+      console.log('inside onChangeHandler');
       calculateAndDisplayRoute(directionsService, directionsDisplay);
     };
+
+    // return directions on click
     document.getElementById('getDirections').addEventListener('click', onChangeHandler);
-    // document.getElementById('endAddress').addEventListener('change', onChangeHandler);
+
+    // TODO make it possible to drag the directions
   }
 
-  // get the address and encode it
-  function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('startAddress').value;
-    geocoder.geocode({'startAddress': address}, function(results, status) {
-      if (status === google.maps.GeocoderStatus.OK) {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
+  // TODO make the start and end address readable in city format
+  // adminView.geoCodeRoute = function(start,end) {
+  //
+  // }
 
   // display the route
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
       origin: document.getElementById('startAddress').value,
       destination: document.getElementById('endAddress').value,
-      travelMode: google.maps.TravelMode.BICYCLING
+      travelMode: google.maps.TravelMode.BICYCLING,
+      unitSystem: google.maps.UnitSystem.IMPERIAL
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
-        console.log(response);
+        rideRoute = response;
+        console.log(rideRoute);
+        $('#routeMap').val(JSON.stringify(rideRoute.geocoded_waypoints));
+        $('#routeDistance').val(JSON.stringify(rideRoute.routes[0].legs[0].distance.text));
+        $('#routeDuration').val(JSON.stringify(rideRoute.routes[0].legs[0].duration.text));
+        $('#routeStart').val(JSON.stringify(rideRoute.routes[0].legs[0].start_address));
+        $('#routeEnd').val(JSON.stringify(rideRoute.routes[0].legs[0].end_address));
+
       } else {
         window.alert('Directions request failed due to ' + status);
       }
@@ -76,13 +73,20 @@
     event.preventDefault();
     var thisRide = {};
     thisRide.name = $('#routeName').val();
-    thisRide.img = $('#routeImg').val();
+    thisRide.rideImage1 = $('#routeImg1').val();
+    thisRide.rideImage2 = $('#routeImg2').val();
+    thisRide.rideImage3 = $('#routeImg3').val();
     thisRide.description = $('#routeDesc').val();
-    thisRide.distance = $('#routeDistance').val();
     thisRide.difficulty = $('#routeDifficulty').val();
     thisRide.elevation = $('#routeElevation').val();
+    thisRide.map = JSON.stringify(rideRoute.geocoded_waypoints);
+    thisRide.distance = JSON.stringify(rideRoute.routes[0].legs[0].distance.text);
+    thisRide.duration = JSON.stringify(rideRoute.routes[0].legs[0].duration.text);
+    thisRide.start = JSON.stringify(rideRoute.routes[0].legs[0].start_address);
+    thisRide.end = JSON.stringify(rideRoute.routes[0].legs[0].end_address);
 
-    // TODO save response object in db for map, then render maps based on object
+
+    // thisRide.routeDetails = JSON.stringify(rideRoute.routes[0].legs[0]);
 
     newRide = new Ride(thisRide)
     newRide.insertRecord();
