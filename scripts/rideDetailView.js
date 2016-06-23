@@ -35,10 +35,11 @@
 
   rideDetailView.calculateAndDisplayRoute = function(directionsService, directionsDisplay) {
     waypointObject = JSON.parse(rideDetailToAppend.mapWaypoints);
-    waypointValues = waypointObject.map(function(waypoint){
+    waypointValues =
+    waypointObject.map(function(waypoint){
       return {
         // TODO get this place_id working
-        location: waypoint.place_id,
+        location: "eugene, or",
         stopover: true
       }
     });

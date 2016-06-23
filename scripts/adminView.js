@@ -108,7 +108,7 @@
     thisRide.end = thisRide.end = $('#routeEndCity').val();
 
     thisRide.mapStart = rideRoute.geocoded_waypoints[0].place_id;
-    thisRide.mapWaypoints = JSON.stringify(rideRoute.geocoded_waypoints.slice(1,-1));
+    thisRide.mapWaypoints = JSON.stringify(rideRoute.request.waypoints);
     thisRide.mapEnd = rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id;
     thisRide.distance = rideRoute.routes[0].legs[0].distance.text;
     thisRide.duration = rideRoute.routes[0].legs[0].duration.text;
