@@ -12,6 +12,7 @@
     this.difficulty = x.difficulty;
     this.distance = x.distance;
     this.mapStart = x.mapStart;
+    this.mapWaypoints = x.mapWaypoints;
     this.mapEnd = x.mapEnd;
     this.duration = x.duration;
     this.start = x.start;
@@ -50,6 +51,7 @@
           'rideImage3 VARCHAR(255), ' +
           'distance INTEGER NOT NULL, ' +
           'mapStart VARCHAR(255), ' +
+          'mapWaypoints VARCHAR(255), ' +
           'mapEnd VARCHAR(255), ' +
           'duration VARCHAR(255), ' +
           'start VARCHAR(255), ' +
@@ -63,8 +65,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (name, description, elevation, difficulty,  rideImage1, rideImage2, rideImage3, distance, mapStart, mapEnd, duration, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapEnd, this.duration, this.start, this.end]
+              sql: 'INSERT INTO rides (name, description, elevation, difficulty,  rideImage1, rideImage2, rideImage3, distance, mapStart, mapWaypoints, mapEnd, duration, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapWaypoints, this.mapEnd, this.duration, this.start, this.end]
             }
         ],
     callback);

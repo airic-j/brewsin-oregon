@@ -527,6 +527,9 @@ nav {
   height: 500px;
   width: 500px; }
 
+#waypoints input {
+  display: block; }
+
 div .column .center {
   margin: 0 auto !important;
   float: none !important;

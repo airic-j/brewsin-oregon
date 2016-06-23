@@ -34,14 +34,23 @@
   }
 
   rideDetailView.calculateAndDisplayRoute = function(directionsService, directionsDisplay) {
-    console.log(rideDetailToAppend.mapStart);
-    console.log(rideDetailToAppend.mapEnd);
+    waypointObject = JSON.parse(rideDetailToAppend.mapWaypoints);
+    waypointValues = waypointObject.map(function(waypoint){
+      return {
+        // TODO get this place_id working
+        location: waypoint.place_id,
+        stopover: true
+      }
+    });
+    console.log(waypointValues);
 
     directionsService.route({
       origin: {'placeId': rideDetailToAppend.mapStart},
-      // routeObject[0].place_id,
       destination: {'placeId': rideDetailToAppend.mapEnd},
-      travelMode: google.maps.TravelMode.BICYCLING
+      travelMode: google.maps.TravelMode.BICYCLING,
+      unitSystem: google.maps.UnitSystem.IMPERIAL,
+      waypoints: waypointValues,
+      optimizeWaypoints: true
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);

@@ -41,11 +41,28 @@
 
   // display the route
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+    waypointValues = [];
+
+    function renderWaypoints() {
+      x = document.getElementById('waypoints').children;
+      for (i = 0; i < x.length; i ++) {
+        waypointValues.push({
+          location: x[i].value,
+          stopover: true
+        });
+      }
+    };
+    renderWaypoints();
+    console.log(waypointValues);
+
     directionsService.route({
       origin: document.getElementById('startAddress').value,
       destination: document.getElementById('endAddress').value,
       travelMode: google.maps.TravelMode.BICYCLING,
-      unitSystem: google.maps.UnitSystem.IMPERIAL
+      unitSystem: google.maps.UnitSystem.IMPERIAL,
+      waypoints: waypointValues,
+      optimizeWaypoints: true
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
@@ -55,12 +72,25 @@
         $('#routeEndId').val(JSON.stringify(rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id));
         $('#routeDistance').val(JSON.stringify(rideRoute.routes[0].legs[0].distance.text));
         $('#routeDuration').val(JSON.stringify(rideRoute.routes[0].legs[0].duration.text));
+        // TODO fix distance calc
 
       } else {
         window.alert('Directions request failed due to ' + status);
       }
     });
   }
+
+  var addWaypoint = function() {
+    console.log('addwaypoint');
+    var input = document.createElement('input');
+    input.type = "text";
+    input.name = "waypoint";
+    input.placeholder = "waypoint";
+    document.getElementById('waypoints').appendChild(input);
+  }
+
+  document.getElementById('createWaypoint').addEventListener('click', addWaypoint);
+
 
   // end maps
 
@@ -78,11 +108,10 @@
     thisRide.end = thisRide.end = $('#routeEndCity').val();
 
     thisRide.mapStart = rideRoute.geocoded_waypoints[0].place_id;
+    thisRide.mapWaypoints = JSON.stringify(rideRoute.geocoded_waypoints.slice(1,-1));
     thisRide.mapEnd = rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id;
     thisRide.distance = rideRoute.routes[0].legs[0].distance.text;
     thisRide.duration = rideRoute.routes[0].legs[0].duration.text;
-
-    // thisRide.routeDetails = JSON.stringify(rideRoute.routes[0].legs[0]);
 
     newRide = new Ride(thisRide)
     newRide.insertRecord();
