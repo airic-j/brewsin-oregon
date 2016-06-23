@@ -20,7 +20,6 @@
               <li>{{distance}} miles</li>
               <li>{{elevation}} feet elevation gain</li>
               <li>Currently 85&#176; F</li>
-              <li>2 beverage stops</li>
             </ul>
             <div class="rideImages">
               <img src="{{rideImage1}}"/>
@@ -40,14 +39,12 @@
             <ul>
               <li>{{distance}} miles</li>
               <li>{{elevation}} feet elevation gain</li>
-              <li>{{difficulty}} difficulty</li>
+              <li>{{difficulty}}</li>
               <li>Currently 85&#176; F</li>
             </ul>
             <ul>
-              <li>Start</li>
-              <li>Stop Name</li>
-              <li>Stop Name</li>
-              <li>Finish</li>
+              <li>{{start}}</li>
+              <li>{{end}}</li>
             </ul>
             <p>{{description}}</p>
             <div id="rideDetailMap">
@@ -121,13 +118,13 @@
           <input id="routeImg3" type="text" placeholder="route img3"/>
           <input id="routeDifficulty" type="text" placeholder="difficulty"/>
           <input id="routeElevation" type="text" placeholder="elevation"/>
+          <input id="routeStartCity" type="text" placeholder="start city"/>
+          <input id="routeEndCity" type="text" placeholder="end city"/>
           <br />
-          <input id="routeMap" type="text" placeholder="route map"/>
+          <input id="routeStartId" type="text" placeholder="start id"/>
+          <input id="routeEndId" type="text" placeholder="end id"/>
           <input id="routeDistance" type="text" placeholder="distance"/>
           <input id="routeDuration" type="text" placeholder="distance"/>
-          <input id="routeStart" type="text" placeholder="start"/>
-          <input id="routeEnd" type="text" placeholder="end"/>
-
 
           <input id="routeSubmit" type="submit" value="Create route">
         </form>
@@ -169,17 +166,6 @@
     <script src='scripts/adminController.js'></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE&callback=adminView.initMap" async defer></script>
-    <!-- <script>
-      var map;
-      function initMap() {
-        console.log('init map called');
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script> -->
-
     <script src="/scripts/routes.js"></script>
 
   </body>

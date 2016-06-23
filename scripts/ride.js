@@ -11,7 +11,8 @@
     this.elevation = x.elevation;
     this.difficulty = x.difficulty;
     this.distance = x.distance;
-    this.map = x.map;
+    this.mapStart = x.mapStart;
+    this.mapEnd = x.mapEnd;
     this.duration = x.duration;
     this.start = x.start;
     this.end = x.end;
@@ -41,14 +42,15 @@
       'CREATE TABLE IF NOT EXISTS rides (' +
           'id INTEGER NOT NULL PRIMARY KEY, ' +
           'name VARCHAR(255) NOT NULL, ' +
-          'description VARCHAR(255), ' +
+          'description VARCHAR(1000), ' +
           'elevation VARCHAR(255), ' +
           'difficulty VARCHAR(255), ' +
           'rideImage1 VARCHAR(255), ' +
           'rideImage2 VARCHAR(255), ' +
           'rideImage3 VARCHAR(255), ' +
           'distance INTEGER NOT NULL, ' +
-          'map VARCHAR(255), ' +
+          'mapStart VARCHAR(255), ' +
+          'mapEnd VARCHAR(255), ' +
           'duration VARCHAR(255), ' +
           'start VARCHAR(255), ' +
           'end VARCHAR(255));',
@@ -61,8 +63,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (name, description, elevation, difficulty,  rideImage1, rideImage2, rideImage3, distance, map, duration, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.map, this.duration, this.start, this.end]
+              sql: 'INSERT INTO rides (name, description, elevation, difficulty,  rideImage1, rideImage2, rideImage3, distance, mapStart, mapEnd, duration, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapEnd, this.duration, this.start, this.end]
             }
         ],
     callback);

@@ -34,13 +34,13 @@
   }
 
   rideDetailView.calculateAndDisplayRoute = function(directionsService, directionsDisplay) {
-    routeObject = JSON.parse(rideDetailToAppend.map);
-    console.log(routeObject);
+    console.log(rideDetailToAppend.mapStart);
+    console.log(rideDetailToAppend.mapEnd);
+
     directionsService.route({
-      origin: {'placeId': routeObject[0].place_id},
+      origin: {'placeId': rideDetailToAppend.mapStart},
       // routeObject[0].place_id,
-      destination: {'placeId': routeObject[routeObject.length - 1].place_id},
-      // routeObject[routeObject.length -1].place_id,
+      destination: {'placeId': rideDetailToAppend.mapEnd},
       travelMode: google.maps.TravelMode.BICYCLING
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
@@ -60,8 +60,6 @@
     $('#rideDetails').show();
     rideDetailView.initMap();
   };
-
-
 
   module.rideView = rideView;
 

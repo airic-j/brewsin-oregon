@@ -38,10 +38,6 @@
     // TODO make it possible to drag the directions
   }
 
-  // TODO make the start and end address readable in city format
-  // adminView.geoCodeRoute = function(start,end) {
-  //
-  // }
 
   // display the route
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -55,11 +51,10 @@
         directionsDisplay.setDirections(response);
         rideRoute = response;
         console.log(rideRoute);
-        $('#routeMap').val(JSON.stringify(rideRoute.geocoded_waypoints));
+        $('#routeStartId').val(JSON.stringify(rideRoute.geocoded_waypoints[0].place_id));
+        $('#routeEndId').val(JSON.stringify(rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id));
         $('#routeDistance').val(JSON.stringify(rideRoute.routes[0].legs[0].distance.text));
         $('#routeDuration').val(JSON.stringify(rideRoute.routes[0].legs[0].duration.text));
-        $('#routeStart').val(JSON.stringify(rideRoute.routes[0].legs[0].start_address));
-        $('#routeEnd').val(JSON.stringify(rideRoute.routes[0].legs[0].end_address));
 
       } else {
         window.alert('Directions request failed due to ' + status);
@@ -79,12 +74,13 @@
     thisRide.description = $('#routeDesc').val();
     thisRide.difficulty = $('#routeDifficulty').val();
     thisRide.elevation = $('#routeElevation').val();
-    thisRide.map = JSON.stringify(rideRoute.geocoded_waypoints);
-    thisRide.distance = JSON.stringify(rideRoute.routes[0].legs[0].distance.text);
-    thisRide.duration = JSON.stringify(rideRoute.routes[0].legs[0].duration.text);
-    thisRide.start = JSON.stringify(rideRoute.routes[0].legs[0].start_address);
-    thisRide.end = JSON.stringify(rideRoute.routes[0].legs[0].end_address);
+    thisRide.start = thisRide.start = $('#routeStartCity').val();
+    thisRide.end = thisRide.end = $('#routeEndCity').val();
 
+    thisRide.mapStart = rideRoute.geocoded_waypoints[0].place_id;
+    thisRide.mapEnd = rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id;
+    thisRide.distance = rideRoute.routes[0].legs[0].distance.text;
+    thisRide.duration = rideRoute.routes[0].legs[0].duration.text;
 
     // thisRide.routeDetails = JSON.stringify(rideRoute.routes[0].legs[0]);
 
