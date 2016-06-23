@@ -38,8 +38,7 @@
     waypointValues =
     waypointObject.map(function(waypoint){
       return {
-        // TODO get this place_id working
-        location: "eugene, or",
+        location: waypoint.location,
         stopover: true
       }
     });
@@ -50,8 +49,7 @@
       destination: {'placeId': rideDetailToAppend.mapEnd},
       travelMode: google.maps.TravelMode.BICYCLING,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
-      waypoints: waypointValues,
-      optimizeWaypoints: true
+      waypoints: waypointValues
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);

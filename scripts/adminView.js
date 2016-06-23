@@ -36,6 +36,14 @@
     document.getElementById('getDirections').addEventListener('click', onChangeHandler);
 
     // TODO make it possible to drag the directions
+
+    var startInput = document.getElementById('startAddress');
+    var endInput = document.getElementById('endAddress');
+    var waypointInputs = document.getElementById('waypoints').children;
+
+    var startAutocomplete = new google.maps.places.Autocomplete(startInput);
+    var endAutocomplete = new google.maps.places.Autocomplete(endInput);
+
   }
 
 
@@ -61,8 +69,7 @@
       destination: document.getElementById('endAddress').value,
       travelMode: google.maps.TravelMode.BICYCLING,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
-      waypoints: waypointValues,
-      optimizeWaypoints: true
+      waypoints: waypointValues
     }, function(response, status) {
       if (status === google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
@@ -87,6 +94,7 @@
     input.name = "waypoint";
     input.placeholder = "waypoint";
     document.getElementById('waypoints').appendChild(input);
+    var waypointAutocomplete = new google.maps.places.Autocomplete(input);
   }
 
   document.getElementById('createWaypoint').addEventListener('click', addWaypoint);

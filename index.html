@@ -43,8 +43,8 @@
               <li>Currently 85&#176; F</li>
             </ul>
             <ul>
-              <li>{{start}}</li>
-              <li>{{end}}</li>
+              <li>Start: {{start}}</li>
+              <li>Finish: {{end}}</li>
             </ul>
             <p>{{description}}</p>
             <div id="rideDetailMap">
@@ -169,7 +169,7 @@
     <script src='scripts/rideDetailController.js'></script>
     <script src='scripts/adminController.js'></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE&callback=adminView.initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE&libraries=places&callback=adminView.initMap" async defer></script>
     <script src="/scripts/routes.js"></script>
 
   </body>
