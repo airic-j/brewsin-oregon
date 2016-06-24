@@ -16,7 +16,7 @@
             <div class="featured">
               <img src="/images/ride-images/road.jpg"/>
               <div class="ride-teaser">
-                <span>Featured:</span>
+                <span>Featured Ride</span>
                 <h3 class="teaser-title">{{name}}</h3>
                 <p class="teaser-text">
                   {{teaser}}
@@ -61,13 +61,8 @@
               <li id="currentTemp"></li>
             </ul>
             <ul id="rideLocations">
-              <li>Start: {{start}}</li>
-              <li>Make stops at:</li>
-              <li>
-                <ul id="stopLocations">
-                </ul>
-              </li>
-              <li>Finish: {{end}}</li>
+              <li>{{start}} to {{end}}</li>
+              <li>Make stops in</li>
             </ul>
             <p id="rideDescription">{{description}}</p>
             <div id="rideDetailMap">
@@ -137,7 +132,7 @@
         <form id="routeForm">
           <input id="routeName" type="text" placeholder="route name"/>
           <input id="routeDesc" type="text" placeholder="description"/>
-          <input id="routeTeaser" type="text" placeholder="description"/>
+          <input id="routeTeaser" type="text" placeholder="teaser"/>
           <input id="routeImg1" type="text" placeholder="route img1"/>
           <input id="routeImg2" type="text" placeholder="route img2"/>
           <input id="routeImg3" type="text" placeholder="route img3"/>

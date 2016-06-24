@@ -1,14 +1,14 @@
 (function(module){
   // console.log('adminview loads!');
 
-  var adminView = {}
+  var adminView = {};
 
   adminView.init = function() {
     console.log('should load the admin page');
     $('section').hide();
     $('#admin').show();
     $('#routeSubmit').click(newRide);
-  }
+  };
 
 // start map
   var map;
@@ -18,7 +18,6 @@
     // console.log('initMap on adminpage called');
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer ({
-      draggable: true
     });
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 9,
@@ -44,7 +43,7 @@
     var startAutocomplete = new google.maps.places.Autocomplete(startInput);
     var endAutocomplete = new google.maps.places.Autocomplete(endInput);
 
-  }
+  };
 
 
   // display the route
@@ -89,12 +88,12 @@
   var addWaypoint = function() {
     console.log('addwaypoint');
     var input = document.createElement('input');
-    input.type = "text";
-    input.name = "waypoint";
-    input.placeholder = "waypoint";
+    input.type = 'text';
+    input.name = 'waypoint';
+    input.placeholder = 'waypoint';
     document.getElementById('waypoints').appendChild(input);
     var waypointAutocomplete = new google.maps.places.Autocomplete(input);
-  }
+  };
 
   function getStartLatLng(start) {
     $.ajax({
@@ -102,7 +101,7 @@
       , success: function(response){
         console.log(response.results[0].geometry.location);
         adminView.rideStartLatLng = response.results[0].geometry.location;
-        }
+      }
       , error: console.log('error in ajax call')
     });
   }
@@ -116,7 +115,7 @@
       console.log('acc',acc);
       acc = acc + parseInt(leg.distance.text.split(/[ ,]+/)[0],10);
       return acc;
-    }, 0)
+    }, 0);
   };
 
   // end maps
@@ -141,9 +140,11 @@
     thisRide.mapEnd = rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id;
     thisRide.distance = adminView.totalDistance;
 
-    newRide = new Ride(thisRide)
+    newRide = new Ride(thisRide);
     newRide.insertRecord();
     $('#rides').append(newRide.toHtml());
+    alert('new ride created');
+    rideController.index();
   }
 
   module.adminView = adminView;

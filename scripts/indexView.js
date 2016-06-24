@@ -1,13 +1,13 @@
 (function(module){
   // console.log('it loads!');
 
-  var indexView = {}
+  var indexView = {};
 
   indexView.init = function() {
     $('section').hide();
     $('#home').show();
     // console.log('should load the index');
-  }
+  };
 
   Ride.prototype.featuredToHtml = function() {
     // console.log('using handlebars on index');

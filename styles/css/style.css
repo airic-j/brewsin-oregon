@@ -362,9 +362,9 @@ html, body {
   src: url("../fonts/desdemona.eot");
   src: url("../fonts/desdemona.otf") format("opentype");
   src: url("../fonts/desdemona.ttf") format("truetype"); }
-html, body {
+html {
   font-family: 'Helvetica Neue', sans-serif;
-  height: 100%; }
+  max-width: 100%; }
 
 a:visited {
   color: #a8a8a8; }
@@ -393,7 +393,7 @@ section {
 
 nav {
   z-index: 100;
-  position: absolute; }
+  position: relative; }
   nav ul {
     list-style-type: none;
     overflow: auto;
@@ -473,9 +473,17 @@ nav {
     width: 75%;
     float: right;
     padding: 0px 20px; }
+    .featured .ride-teaser span {
+      width: 200px;
+      text-align: left;
+      display: block;
+      color: #a8a8a8;
+      font-size: 1.2em;
+      font-weight: 200;
+      padding-bottom: 50px; }
     .featured .ride-teaser .teaser-title {
       font-size: 2.0em;
-      margin: 0 0; }
+      margin: -40px 0 0 0; }
 
 #ridesTagLine {
   color: #a8a8a8;
@@ -525,7 +533,7 @@ nav {
   .ride .rideImages img, .rideDetail .rideImages img {
     width: 31%;
     max-width: 31%;
-    margin-right: 2%; }
+    margin-right: 2.5%; }
   .ride .rideImages img:last-of-type, .rideDetail .rideImages img:last-of-type {
     margin-right: 0%; }
   .ride .rideMap, .rideDetail .rideMap {
@@ -540,6 +548,10 @@ nav {
 .rideDetail h3 {
   font-weight: 300;
   font-size: 1.5em; }
+.rideDetail #rideNotes {
+  font-size: 1.3em; }
+.rideDetail #rideLocations {
+  font-size: 1.2em; }
 .rideDetail #rideDetailMap {
   margin-top: 0; }
 
@@ -558,23 +570,49 @@ nav {
   display: inline-block;
   text-align: left; }
 
-end ride detail page
-#map {
-  height: 500px;
-  width: 500px; }
+#createMap {
+  float: left;
+  width: 55%; }
 
 #createMap input {
-  display: block; }
+  display: block;
+  margin-bottom: 10px;
+  width: 90%; }
 
 #waypoints input {
   display: block; }
 
-div .column .center {
-  margin: 0 auto !important;
-  float: none !important;
-  text-align: center; }
+#map {
+  width: 55%;
+  height: 500px;
+  float: left; }
+
+#routeForm {
+  width: 40%;
+  float: left; }
 
 #routeForm input[type=text] {
-  display: block; }
+  display: block;
+  width: 300px;
+  margin-bottom: 5px; }
+
+#routeDesc {
+  width: 500px;
+  padding: 0 0 300px 0; }
+
+@media screen and (max-width: 850px) {
+  .featured {
+    display: none; } }
+@media screen and (max-width: 650px) {
+  #ridesTagLine {
+    font-size: 2.0em; }
+
+  .ride {
+    padding-left: 10px; }
+
+  .ride .rideImages img, .rideDetail .rideImages img {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

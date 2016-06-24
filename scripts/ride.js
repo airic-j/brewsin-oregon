@@ -57,22 +57,21 @@
   Ride.prototype.insertRecord = function(callback) {
     // console.log('gonna go insert a record');
     webDB.execute (
-        [
-            {
-              sql: 'INSERT INTO rides (name, description, teaser, elevation, difficulty, rideImage1, rideImage2, rideImage3, distance, mapStart, mapStartLatLng, mapWaypoints, mapEnd, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-              data: [this.name, this.description, this.teaser, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapStartLatLng, this.mapWaypoints, this.mapEnd, this.start, this.end]
-            }
-        ],
+      [
+        {
+          sql: 'INSERT INTO rides (name, description, teaser, elevation, difficulty, rideImage1, rideImage2, rideImage3, distance, mapStart, mapStartLatLng, mapWaypoints, mapEnd, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+          data: [this.name, this.description, this.teaser, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapStartLatLng, this.mapWaypoints, this.mapEnd, this.start, this.end]}
+      ],
     callback);
   };
 
   Ride.loadFromSQL = function(callback) {
     webDB.execute (
-        [
-            {
-              sql: 'SELECT * FROM rides;',
-            }
-        ],
+      [
+        {
+          sql: 'SELECT * FROM rides;',
+        }
+      ],
     function(rows){
       // console.log('inside loadPage webDb execute callback -------');
       Ride.all = rows.map(function(ele) {
@@ -98,7 +97,7 @@
         console.log('ajax error', {xhr: xhr, status: status, error: error});
       }
     });
-  }
+  };
 
   Ride.fetchAll = function(callback) {
     // console.log('about to go fetch that data via fetchall');

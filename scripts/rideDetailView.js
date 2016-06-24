@@ -21,7 +21,7 @@
   };
 
   rideDetailView.appendStopovers = function(waypoints) {
-    stopoverHTML = document.getElementById('stopLocations');
+    stopoverHTML = document.getElementById('rideLocations');
     if(waypoints.length>0) {
       console.log('has waypoints, append');
       for(i = 0; i < waypoints.length; i ++) {
@@ -34,7 +34,7 @@
       console.log('no waypoints, empty');
       stopoverHTML.innerHTML = '';
     }
-  }
+  };
 
   rideDetailView.initMap = function() {
     console.log('initMap on rideDetailView called');
@@ -42,13 +42,14 @@
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('rideDetailMap'), {
       zoom: 9,
-      center: {lat: +45.523, lng: -122.676}
+      center: {lat: +45.523, lng: -122.676},
+      scrollwheel: false
     });
     directionsDisplay.setMap(map);
 
     // initialize the map!
     rideDetailView.calculateAndDisplayRoute(directionsService, directionsDisplay);
-  }
+  };
 
   rideDetailView.calculateAndDisplayRoute = function(directionsService, directionsDisplay) {
     waypointObject = JSON.parse(rideDetailToAppend.mapWaypoints);
@@ -57,7 +58,7 @@
       return {
         location: waypoint.location,
         stopover: true
-      }
+      };
     });
     rideDetailView.appendStopovers(waypointValues);
 
@@ -75,17 +76,17 @@
         window.alert('Directions request failed due to ' + status);
       }
     });
-  }
+  };
 
   rideDetailView.getWeather = function () {
     var startLocation = JSON.parse(rideDetailToAppend.mapStartLatLng);
     var weatherAPI = 'http://api.wunderground.com/api/c57bffbbb79db788/conditions/q/' + startLocation.lat + ',' + startLocation.lng + '.json';
     var weatherSuccess = function(data) {
-        console.log(data.current_observation.temp_f);
-        document.getElementById('currentTemp').innerHTML = ('Currently ' + Math.round(data.current_observation.temp_f) + '&#176; F');
-      };//end
-      $.getJSON(weatherAPI, weatherSuccess);
-  }
+      console.log(data.current_observation.temp_f);
+      document.getElementById('currentTemp').innerHTML = ('Currently ' + Math.round(data.current_observation.temp_f) + '&#176; F');
+    };//end
+    $.getJSON(weatherAPI, weatherSuccess);
+  };
 
 
   rideDetailView.init = function(id) {
