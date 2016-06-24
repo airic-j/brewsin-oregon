@@ -12,16 +12,18 @@
     <script id="featuredRide" type="text/x-handlebars-template">
       <div class="row">
         <div class="columns twelve">
-          <div class="featured">
-            <img src="/images/ride-images/road.jpg"/>
-            <div class="ride-teaser">
-              <h3 class="teaser-title">Mount Hood Ascent</h3>
-              <p class="teaser-text">
-                Lorem ipsum words ipsum words ipsum words ipsum words
-                ipsum words ipsum words ipsum words ipsum words ipsum words.
-              </p>
+          <a href="/rides/{{id}}">
+            <div class="featured">
+              <img src="/images/ride-images/road.jpg"/>
+              <div class="ride-teaser">
+                <span>Featured:</span>
+                <h3 class="teaser-title">{{name}}</h3>
+                <p class="teaser-text">
+                  {{teaser}}
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </script>
@@ -58,16 +60,16 @@
               <li>{{difficulty}}</li>
               <li id="currentTemp"></li>
             </ul>
-            <ul id="startEndLocations">
+            <ul id="rideLocations">
               <li>Start: {{start}}</li>
+              <li>Make stops at:</li>
+              <li>
+                <ul id="stopLocations">
+                </ul>
+              </li>
               <li>Finish: {{end}}</li>
             </ul>
-            <ul id="stopLocations">
-              <li>
-                Making stops in:
-              </li>
-            </ul>
-            <p>{{description}}</p>
+            <p id="rideDescription">{{description}}</p>
             <div id="rideDetailMap">
 
             </div>
@@ -102,7 +104,7 @@
       <div class="row">
         <div class="columns twelve center welcome">
           <h2>Tour de Hops</h2>
-          <span id="byline">Ride Pint to Pint</span>
+          <!-- <span id="byline">Ride Pint to Pint</span> -->
           <a href="/rides"><button>Explore the rides</button></a>
         </div>
       </div>
@@ -135,6 +137,7 @@
         <form id="routeForm">
           <input id="routeName" type="text" placeholder="route name"/>
           <input id="routeDesc" type="text" placeholder="description"/>
+          <input id="routeTeaser" type="text" placeholder="description"/>
           <input id="routeImg1" type="text" placeholder="route img1"/>
           <input id="routeImg2" type="text" placeholder="route img2"/>
           <input id="routeImg3" type="text" placeholder="route img3"/>
@@ -143,24 +146,20 @@
           <input id="routeStartCity" type="text" placeholder="start city"/>
           <input id="routeEndCity" type="text" placeholder="end city"/>
           <br />
-          <input id="routeStartId" type="text" placeholder="start id"/>
-          <input id="routeEndId" type="text" placeholder="end id"/>
-          <input id="routeDistance" type="text" placeholder="distance"/>
-          <input id="routeDuration" type="text" placeholder="distance"/>
-
-          <input id="routeSubmit" type="submit" value="Create route">
+          <input id="routeStartId" type="text" placeholder="start id" disabled/>
+          <input id="routeEndId" type="text" placeholder="end id" disabled/>
+          <input id="routeDistance" type="text" placeholder="distance" disabled/>
         </form>
 
         <div id="createMap">
-          <b>Start: </b>
           <input id="startAddress" type="textbox" placeholder="Start">
-          <b>End: </b>
-          <input id="endAddress" type="textbox" placeholder="Finish">
           <input id="createWaypoint" type="button" value="Add waypoint"/>
-          <input id="getDirections" type="button" value="Get directions"/>
           <div id="waypoints">
-
+          <!-- waypoint inputs added here -->
           </div>
+          <input id="endAddress" type="textbox" placeholder="Finish">
+          <input id="getDirections" type="button" value="Get directions"/>
+          <input id="routeSubmit" type="submit" value="Create route">
         </div>
         <div id="map">
         <!-- map goes here -->
@@ -169,27 +168,25 @@
     </div>
   </section>
 
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your sites ID -->
-    <script src='vendor/scripts/jquery.js'></script>
-    <script src='vendor/scripts/handlebars.js'></script>
-    <script src="vendor/scripts/page.js"></script>
-    <script src="vendor/scripts/html5sql.js"></script>
+    <script src='/vendor/scripts/jquery.js'></script>
+    <script src='/vendor/scripts/handlebars.js'></script>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="/vendor/scripts/html5sql.js"></script>
 
     <script src="/scripts/webdb.js"></script>
 
     <script src="/scripts/ride.js"></script>
 
-    <script src='scripts/indexView.js'></script>
-    <script src='scripts/rideView.js'></script>
-    <script src='scripts/rideDetailView.js'></script>
-    <script src='scripts/adminView.js'></script>
+    <script src='/scripts/indexView.js'></script>
+    <script src='/scripts/rideView.js'></script>
+    <script src='/scripts/rideDetailView.js'></script>
+    <script src='/scripts/adminView.js'></script>
 
-    <script src='scripts/indexController.js'></script>
-    <script src='scripts/rideController.js'></script>
-    <script src='scripts/rideDetailController.js'></script>
-    <script src='scripts/adminController.js'></script>
+    <script src='/scripts/indexController.js'></script>
+    <script src='/scripts/rideController.js'></script>
+    <script src='/scripts/rideDetailController.js'></script>
+    <script src='/scripts/adminController.js'></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE&libraries=places&callback=adminView.initMap" async defer></script>
     <script src="/scripts/routes.js"></script>

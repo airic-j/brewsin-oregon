@@ -462,7 +462,7 @@ nav {
   color: #ffffff;
   margin: 0 auto;
   z-index: 100;
-  width: 60%;
+  width: 75%;
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5); }
@@ -517,15 +517,15 @@ nav {
     margin: 20px auto;
     width: 100%;
     display: inline-block; }
-  .ride li, .rideDetail li {
-    float: left;
-    margin-right: 40px; }
+    .ride ul li, .rideDetail ul li {
+      float: left;
+      margin-right: 40px; }
   .ride .rideImages, .rideDetail .rideImages {
     display: block; }
   .ride .rideImages img, .rideDetail .rideImages img {
     width: 31%;
-    max-width: 32%;
-    margin-right: 3%; }
+    max-width: 31%;
+    margin-right: 2%; }
   .ride .rideImages img:last-of-type, .rideDetail .rideImages img:last-of-type {
     margin-right: 0%; }
   .ride .rideMap, .rideDetail .rideMap {
@@ -540,13 +540,31 @@ nav {
 .rideDetail h3 {
   font-weight: 300;
   font-size: 1.5em; }
-.rideDetail p {
+.rideDetail #rideDetailMap {
+  margin-top: 0; }
+
+#rideLocations {
+  margin-top: 0; }
+  #rideLocations li {
+    width: 100%;
+    float: left;
+    margin: 10px 0; }
+
+#stopLocations {
+  margin: 0 0; }
+
+#rideDescription {
+  margin: 0 0 30px 0;
   display: inline-block;
   text-align: left; }
 
+end ride detail page
 #map {
   height: 500px;
   width: 500px; }
+
+#createMap input {
+  display: block; }
 
 #waypoints input {
   display: block; }

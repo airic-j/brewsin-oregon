@@ -16,6 +16,7 @@
     // put each JSON element into the projects array after making it a Project object
     $('#rideDetails').empty();
     rideDetailToAppend = Ride.all[id-1];
+    console.log(Ride.all);
     $('#rideDetails').append(rideDetailToAppend.detailToHtml());
   };
 
@@ -88,10 +89,10 @@
 
 
   rideDetailView.init = function(id) {
-    // console.log('rendering rideview.preview');
-    rideDetailView.appendRides(id);
+    console.log('rendering ride detail view');
     $('section').hide();
     $('#rideDetails').show();
+    rideDetailView.appendRides(id);
     rideDetailView.getWeather();
     rideDetailView.initMap();
   };

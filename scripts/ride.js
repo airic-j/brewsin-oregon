@@ -8,6 +8,7 @@
     this.rideImage2 = x.rideImage2;
     this.rideImage3 = x.rideImage3;
     this.description = x.description;
+    this.teaser = x.teaser;
     this.elevation = x.elevation;
     this.difficulty = x.difficulty;
     this.distance = x.distance;
@@ -15,7 +16,6 @@
     this.mapStartLatLng = x.mapStartLatLng;
     this.mapWaypoints = x.mapWaypoints;
     this.mapEnd = x.mapEnd;
-    // this.duration = x.duration;
     this.start = x.start;
     this.end = x.end;
   }
@@ -37,6 +37,7 @@
           'id INTEGER NOT NULL PRIMARY KEY, ' +
           'name VARCHAR(255) NOT NULL, ' +
           'description VARCHAR(1000), ' +
+          'teaser VARCHAR (150), ' +
           'elevation VARCHAR(255), ' +
           'difficulty VARCHAR(255), ' +
           'rideImage1 VARCHAR(255), ' +
@@ -47,7 +48,6 @@
           'mapStartLatLng VARCHAR(255), ' +
           'mapWaypoints VARCHAR(255), ' +
           'mapEnd VARCHAR(255), ' +
-          // 'duration VARCHAR(255), ' +
           'start VARCHAR(255), ' +
           'end VARCHAR(255));',
           myCallback
@@ -59,8 +59,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (name, description, elevation, difficulty, rideImage1, rideImage2, rideImage3, distance, mapStart, mapStartLatLng, mapWaypoints, mapEnd, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapStartLatLng, this.mapWaypoints, this.mapEnd, this.start, this.end]
+              sql: 'INSERT INTO rides (name, description, teaser, elevation, difficulty, rideImage1, rideImage2, rideImage3, distance, mapStart, mapStartLatLng, mapWaypoints, mapEnd, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+              data: [this.name, this.description, this.teaser, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapStartLatLng, this.mapWaypoints, this.mapEnd, this.start, this.end]
             }
         ],
     callback);

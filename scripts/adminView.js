@@ -76,12 +76,10 @@
         console.log(rideRoute);
         $('#routeStartId').val(JSON.stringify(rideRoute.geocoded_waypoints[0].place_id));
         $('#routeEndId').val(JSON.stringify(rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id));
-        // $('#routeDuration').val(JSON.stringify(rideRoute.routes[0].legs[0].duration.text));
         console.log('should run get start lat');
         getStartLatLng(rideRoute.geocoded_waypoints[0].place_id);
-        getDistance(response);
+        getDistance(rideRoute);
         $('#routeDistance').val(adminView.totalDistance);
-
       } else {
         window.alert('Directions request failed due to ' + status);
       }
@@ -117,15 +115,14 @@
       console.log('leg',leg);
       console.log('acc',acc);
       acc = acc + parseInt(leg.distance.text.split(/[ ,]+/)[0],10);
-      //b = parseInt(b.distance.text.split(/[ ,]+/)[0],10);
       return acc;
     }, 0)
-    // console.log('zzzz',adminView.totalDistance);
   };
 
   // end maps
 
   function newRide(event) {
+    console.log(rideRoute);
     event.preventDefault();
     var thisRide = {};
     thisRide.name = $('#routeName').val();
@@ -133,17 +130,16 @@
     thisRide.rideImage2 = $('#routeImg2').val();
     thisRide.rideImage3 = $('#routeImg3').val();
     thisRide.description = $('#routeDesc').val();
+    this.teaser = $('#routeTeaser').val();
     thisRide.difficulty = $('#routeDifficulty').val();
     thisRide.elevation = $('#routeElevation').val();
-    thisRide.start = thisRide.start = $('#routeStartCity').val();
-    thisRide.end = thisRide.end = $('#routeEndCity').val();
-
+    thisRide.start = $('#routeStartCity').val();
+    thisRide.end = $('#routeEndCity').val();
     thisRide.mapStart = rideRoute.geocoded_waypoints[0].place_id;
     thisRide.mapStartLatLng = JSON.stringify(adminView.rideStartLatLng);
     thisRide.mapWaypoints = JSON.stringify(rideRoute.request.waypoints);
     thisRide.mapEnd = rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id;
     thisRide.distance = adminView.totalDistance;
-    // thisRide.duration = rideRoute.routes[0].legs[0].duration.text;
 
     newRide = new Ride(thisRide)
     newRide.insertRecord();

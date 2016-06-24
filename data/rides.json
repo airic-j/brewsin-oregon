@@ -2,6 +2,7 @@
    {
       "name":"Cruise the Coast",
       "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "teaser": "Plenty of miles and smiles en route to IPAs",
       "elevation":"1200",
       "difficulty":"Moderate",
       "rideImage1":"/images/ride-images/road.jpg",
@@ -19,6 +20,7 @@
    {
       "name":"Mt. Hood Hills Ride",
       "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "teaser": "Plenty of miles and smiles en route to IPAs",
       "elevation":"1200",
       "difficulty":"Moderate",
       "rideImage1":"/images/ride-images/hops.jpg",
@@ -36,6 +38,7 @@
    {
       "name":"Willamette River Trail Ride",
       "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "teaser": "Plenty of miles and smiles en route to IPAs",
       "elevation":"1200",
       "difficulty":"Moderate",
       "rideImage1":"/images/ride-images/road.jpg",
@@ -53,6 +56,7 @@
    {
       "name":"Bridge to Bridge",
       "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "teaser": "Plenty of miles and smiles en route to IPAs",
       "elevation":"1200",
       "difficulty":"Moderate",
       "rideImage1":"/images/ride-images/hops.jpg",
