@@ -17,7 +17,7 @@
   };
 
   rideView.appendRides = function() {
-    console.log('populate the rides by appending');
+    // console.log('populate the rides by appending');
     // put each JSON element into the projects array after making it a Project object
     ridesArray = Ride.all.forEach(function(ride){
       // console.log(ride);

@@ -27,7 +27,7 @@
 
     var myCallback = function(result) {
       // console.log('inside createTable websql callback');
-      console.log('Successfully set up the ride table.', result);
+      // console.log('Successfully set up the ride table.', result);
       if (callback) callback();
     };
 
@@ -93,7 +93,7 @@
         Ride.loadFromSQL(callback);
       },
       error: function(xhr, status, error){
-        console.log('inside fetchAll ajax error');
+        // console.log('inside fetchAll ajax error');
         console.log('ajax error', {xhr: xhr, status: status, error: error});
       }
     });

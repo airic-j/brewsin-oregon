@@ -53,7 +53,8 @@
       <div class="row">
         <div class="columns twelve center">
           <div class="rideDetail">
-            <h3 class="rideName">{{name}}</h3>
+            <h3 class="rideName">{{name}}</h3><span id="heart">heart</span>
+            <a href='#' id="heart"><i class="fa fa-camera-retro"></i></a>
             <ul id="rideNotes">
               <li>{{distance}} miles</li>
               <li>{{elevation}} feet elevation gain</li>
@@ -87,7 +88,7 @@
         <ul>
           <li ><a href="/">TDH</a></li>
           <li><a href="/rides">Rides</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="/saved">Saved</a></li>
           <li><a href="/admin">admin</a></li>
         </ul>
       </nav>
@@ -125,6 +126,14 @@
     <!-- rides to be populated here -->
   </section>
 
+  <section id="saved">
+    <div class="row">
+      <div class="columns twelve">
+        <h2>My saved rides</h2>
+      </div>
+    </div>
+  </section>
+
   <section id="admin">
     <div class="row">
       <div class="columns twelve">
@@ -136,7 +145,11 @@
           <input id="routeImg1" type="text" placeholder="route img1"/>
           <input id="routeImg2" type="text" placeholder="route img2"/>
           <input id="routeImg3" type="text" placeholder="route img3"/>
-          <input id="routeDifficulty" type="text" placeholder="difficulty"/>
+          <select id="routeDifficulty">
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Difficult">Difficult</option>
+          </select>
           <input id="routeElevation" type="text" placeholder="elevation"/>
           <input id="routeStartCity" type="text" placeholder="start city"/>
           <input id="routeEndCity" type="text" placeholder="end city"/>
@@ -176,11 +189,13 @@
     <script src='/scripts/indexView.js'></script>
     <script src='/scripts/rideView.js'></script>
     <script src='/scripts/rideDetailView.js'></script>
+    <script src='/scripts/savedView.js'></script>
     <script src='/scripts/adminView.js'></script>
 
     <script src='/scripts/indexController.js'></script>
     <script src='/scripts/rideController.js'></script>
     <script src='/scripts/rideDetailController.js'></script>
+    <script src='/scripts/savedController.js'></script>
     <script src='/scripts/adminController.js'></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE&libraries=places&callback=adminView.initMap" async defer></script>
