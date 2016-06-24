@@ -9,6 +9,23 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/css/style.css">
 
+    <script id="featuredRide" type="text/x-handlebars-template">
+      <div class="row">
+        <div class="columns twelve">
+          <div class="featured">
+            <img src="/images/ride-images/road.jpg"/>
+            <div class="ride-teaser">
+              <h3 class="teaser-title">Mount Hood Ascent</h3>
+              <p class="teaser-text">
+                Lorem ipsum words ipsum words ipsum words ipsum words
+                ipsum words ipsum words ipsum words ipsum words ipsum words.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
     <script id="rideTemplate" type="text/x-handlebars-template">
       <div class="row">
         <div class="columns twelve center">
@@ -19,7 +36,6 @@
             <ul class="rideBullets">
               <li>{{distance}} miles</li>
               <li>{{elevation}} feet elevation gain</li>
-              <li>Currently 85&#176; F</li>
             </ul>
             <div class="rideImages">
               <img src="{{rideImage1}}"/>
@@ -36,15 +52,20 @@
         <div class="columns twelve center">
           <div class="rideDetail">
             <h3 class="rideName">{{name}}</h3>
-            <ul>
+            <ul id="rideNotes">
               <li>{{distance}} miles</li>
               <li>{{elevation}} feet elevation gain</li>
               <li>{{difficulty}}</li>
-              <li>Currently 85&#176; F</li>
+              <li id="currentTemp"></li>
             </ul>
-            <ul>
+            <ul id="startEndLocations">
               <li>Start: {{start}}</li>
               <li>Finish: {{end}}</li>
+            </ul>
+            <ul id="stopLocations">
+              <li>
+                Making stops in:
+              </li>
             </ul>
             <p>{{description}}</p>
             <div id="rideDetailMap">
@@ -77,7 +98,7 @@
   </div>
 
   <section id="home">
-    <div class="home-header">
+    <div id="home-header">
       <div class="row">
         <div class="columns twelve center welcome">
           <h2>Tour de Hops</h2>
@@ -85,6 +106,7 @@
           <a href="/rides"><button>Explore the rides</button></a>
         </div>
       </div>
+      <!-- featured ride here -->
     </div>
   </section>
 

@@ -15,7 +15,7 @@
 
   // initialize map and other details
   adminView.initMap = function() {
-    console.log('initMap on adminpage called');
+    // console.log('initMap on adminpage called');
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer ({
       draggable: true
@@ -62,7 +62,6 @@
       }
     };
     renderWaypoints();
-    console.log(waypointValues);
 
     directionsService.route({
       origin: document.getElementById('startAddress').value,
@@ -77,9 +76,11 @@
         console.log(rideRoute);
         $('#routeStartId').val(JSON.stringify(rideRoute.geocoded_waypoints[0].place_id));
         $('#routeEndId').val(JSON.stringify(rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id));
-        $('#routeDistance').val(JSON.stringify(rideRoute.routes[0].legs[0].distance.text));
-        $('#routeDuration').val(JSON.stringify(rideRoute.routes[0].legs[0].duration.text));
-        // TODO fix distance calc
+        // $('#routeDuration').val(JSON.stringify(rideRoute.routes[0].legs[0].duration.text));
+        console.log('should run get start lat');
+        getStartLatLng(rideRoute.geocoded_waypoints[0].place_id);
+        getDistance(response);
+        $('#routeDistance').val(adminView.totalDistance);
 
       } else {
         window.alert('Directions request failed due to ' + status);
@@ -97,8 +98,30 @@
     var waypointAutocomplete = new google.maps.places.Autocomplete(input);
   }
 
+  function getStartLatLng(start) {
+    $.ajax({
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?place_id=' + start + '&key=AIzaSyChN4izM35xnsX--Lz2AnR304UhyRC50SE'
+      , success: function(response){
+        console.log(response.results[0].geometry.location);
+        adminView.rideStartLatLng = response.results[0].geometry.location;
+        }
+      , error: console.log('error in ajax call')
+    });
+  }
+
   document.getElementById('createWaypoint').addEventListener('click', addWaypoint);
 
+  function getDistance(response) {
+    legs = response.routes[0].legs;
+    adminView.totalDistance = legs.reduce(function(acc, leg){
+      console.log('leg',leg);
+      console.log('acc',acc);
+      acc = acc + parseInt(leg.distance.text.split(/[ ,]+/)[0],10);
+      //b = parseInt(b.distance.text.split(/[ ,]+/)[0],10);
+      return acc;
+    }, 0)
+    // console.log('zzzz',adminView.totalDistance);
+  };
 
   // end maps
 
@@ -116,10 +139,11 @@
     thisRide.end = thisRide.end = $('#routeEndCity').val();
 
     thisRide.mapStart = rideRoute.geocoded_waypoints[0].place_id;
+    thisRide.mapStartLatLng = JSON.stringify(adminView.rideStartLatLng);
     thisRide.mapWaypoints = JSON.stringify(rideRoute.request.waypoints);
     thisRide.mapEnd = rideRoute.geocoded_waypoints[rideRoute.geocoded_waypoints.length -1].place_id;
-    thisRide.distance = rideRoute.routes[0].legs[0].distance.text;
-    thisRide.duration = rideRoute.routes[0].legs[0].duration.text;
+    thisRide.distance = adminView.totalDistance;
+    // thisRide.duration = rideRoute.routes[0].legs[0].duration.text;
 
     newRide = new Ride(thisRide)
     newRide.insertRecord();

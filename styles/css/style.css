@@ -363,7 +363,8 @@ html, body {
   src: url("../fonts/desdemona.otf") format("opentype");
   src: url("../fonts/desdemona.ttf") format("truetype"); }
 html, body {
-  font-family: 'Helvetica Neue', sans-serif; }
+  font-family: 'Helvetica Neue', sans-serif;
+  height: 100%; }
 
 a:visited {
   color: #a8a8a8; }
@@ -406,7 +407,7 @@ nav {
   nav li a {
     color: #a8a8a8; }
 
-.home-header {
+#home-header {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -427,14 +428,15 @@ nav {
   margin-top: 40px;
   font-family: helvetica;
   font-weight: 300;
-  margin-top: 120px; }
+  margin-top: 50px;
+  margin-bottom: 100px; }
   .welcome h2 {
-    font-size: 8.0em;
+    font-size: 7.0em;
     font-weight: 200;
     margin-bottom: 10px;
     font-family: desdemona; }
   .welcome #byline {
-    font-size: 3.0em;
+    font-size: 2.5em;
     font-family: matura;
     display: block; }
   .welcome button {
@@ -455,6 +457,25 @@ nav {
     margin: 30px auto; }
   .welcome a {
     color: #ffffff; }
+
+.featured {
+  color: #ffffff;
+  margin: 0 auto;
+  z-index: 100;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .featured img {
+    width: 25%;
+    display: inline; }
+  .featured .ride-teaser {
+    width: 75%;
+    float: right;
+    padding: 0px 20px; }
+    .featured .ride-teaser .teaser-title {
+      font-size: 2.0em;
+      margin: 0 0; }
 
 #ridesTagLine {
   color: #a8a8a8;

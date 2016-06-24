@@ -12,22 +12,15 @@
     this.difficulty = x.difficulty;
     this.distance = x.distance;
     this.mapStart = x.mapStart;
+    this.mapStartLatLng = x.mapStartLatLng;
     this.mapWaypoints = x.mapWaypoints;
     this.mapEnd = x.mapEnd;
-    this.duration = x.duration;
+    // this.duration = x.duration;
     this.start = x.start;
     this.end = x.end;
-
   }
 
   Ride.all = [];
-
-  // Ride.clearTable = function() {
-  //   webDB.execute(
-  //     // what SQL command do we run here inside these quotes?
-  //     'DROP TABLE rides;'
-  //   );
-  // }
 
   Ride.createTable = function(callback) {
     // console.log('inside createTable');
@@ -51,9 +44,10 @@
           'rideImage3 VARCHAR(255), ' +
           'distance INTEGER NOT NULL, ' +
           'mapStart VARCHAR(255), ' +
+          'mapStartLatLng VARCHAR(255), ' +
           'mapWaypoints VARCHAR(255), ' +
           'mapEnd VARCHAR(255), ' +
-          'duration VARCHAR(255), ' +
+          // 'duration VARCHAR(255), ' +
           'start VARCHAR(255), ' +
           'end VARCHAR(255));',
           myCallback
@@ -65,8 +59,8 @@
     webDB.execute (
         [
             {
-              sql: 'INSERT INTO rides (name, description, elevation, difficulty,  rideImage1, rideImage2, rideImage3, distance, mapStart, mapWaypoints, mapEnd, duration, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
-              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapWaypoints, this.mapEnd, this.duration, this.start, this.end]
+              sql: 'INSERT INTO rides (name, description, elevation, difficulty, rideImage1, rideImage2, rideImage3, distance, mapStart, mapStartLatLng, mapWaypoints, mapEnd, start, end) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+              data: [this.name, this.description, this.elevation, this.difficulty, this.rideImage1, this.rideImage2, this.rideImage3, this.distance, this.mapStart, this.mapStartLatLng, this.mapWaypoints, this.mapEnd, this.start, this.end]
             }
         ],
     callback);
@@ -85,7 +79,6 @@
         return new Ride(ele);
       });
       callback();
-      // rideView.appendRides();
     });
   };
 
@@ -99,7 +92,6 @@
           new Ride(item).insertRecord();
         });
         Ride.loadFromSQL(callback);
-        // rideView.appendRides();
       },
       error: function(xhr, status, error){
         console.log('inside fetchAll ajax error');
@@ -113,10 +105,10 @@
     // webDB.execute('DELETE FROM books', function(rows){});
     webDB.execute('SELECT * FROM rides LIMIT 1', function(rows){
       if (rows.length !== 0){
-        console.log('inside fetchAll loadPage because rows exist');
+        // console.log('inside fetchAll loadPage because rows exist');
         Ride.loadFromSQL(callback);
       } else {
-        console.log('inside fetchAll ajax because rows doent exist');
+        // console.log('inside fetchAll ajax because rows doent exist');
         Ride.loadFromJSON(callback);
       }
     });

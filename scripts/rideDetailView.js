@@ -19,6 +19,22 @@
     $('#rideDetails').append(rideDetailToAppend.detailToHtml());
   };
 
+  rideDetailView.appendStopovers = function(waypoints) {
+    stopoverHTML = document.getElementById('stopLocations');
+    if(waypoints.length>0) {
+      console.log('has waypoints, append');
+      for(i = 0; i < waypoints.length; i ++) {
+        var li = document.createElement('li');
+        console.log(waypoints[i].location);
+        li.innerHTML = waypoints[i].location;
+        stopoverHTML.appendChild(li);
+      }
+    } else {
+      console.log('no waypoints, empty');
+      stopoverHTML.innerHTML = '';
+    }
+  }
+
   rideDetailView.initMap = function() {
     console.log('initMap on rideDetailView called');
     var directionsService = new google.maps.DirectionsService;
@@ -42,7 +58,7 @@
         stopover: true
       }
     });
-    console.log(waypointValues);
+    rideDetailView.appendStopovers(waypointValues);
 
     directionsService.route({
       origin: {'placeId': rideDetailToAppend.mapStart},
@@ -60,12 +76,23 @@
     });
   }
 
+  rideDetailView.getWeather = function () {
+    var startLocation = JSON.parse(rideDetailToAppend.mapStartLatLng);
+    var weatherAPI = 'http://api.wunderground.com/api/c57bffbbb79db788/conditions/q/' + startLocation.lat + ',' + startLocation.lng + '.json';
+    var weatherSuccess = function(data) {
+        console.log(data.current_observation.temp_f);
+        document.getElementById('currentTemp').innerHTML = ('Currently ' + Math.round(data.current_observation.temp_f) + '&#176; F');
+      };//end
+      $.getJSON(weatherAPI, weatherSuccess);
+  }
+
 
   rideDetailView.init = function(id) {
     // console.log('rendering rideview.preview');
     rideDetailView.appendRides(id);
     $('section').hide();
     $('#rideDetails').show();
+    rideDetailView.getWeather();
     rideDetailView.initMap();
   };
 
