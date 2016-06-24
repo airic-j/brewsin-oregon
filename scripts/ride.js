@@ -21,6 +21,7 @@
   }
 
   Ride.all = [];
+  Ride.savedRides = [];
 
   Ride.createTable = function(callback) {
     // console.log('inside createTable');

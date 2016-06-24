@@ -1,7 +1,6 @@
 (function(module){
 
   rideDetailView = {};
-  savedRides = [];
 
   // Ride function method for turning rides json data into HTML
   Ride.prototype.detailToHtml = function() {
@@ -22,9 +21,9 @@
 
   rideDetailView.loadSaved = function() {
     console.log('------- this ride ' + rideDetailToAppend.id);
-    console.log(savedRides);
-    console.log($.inArray(rideDetailToAppend.id,savedRides));
-    if ($.inArray(rideDetailToAppend.id,savedRides)>-1) {
+    console.log(Ride.savedRides);
+    console.log($.inArray(rideDetailToAppend.id,Ride.savedRides));
+    if ($.inArray(rideDetailToAppend.id,Ride.savedRides)>-1) {
       console.log('this ride was saved');
       document.getElementById('heart').classList.add('saved');
     }
@@ -117,22 +116,22 @@
   function storeSaved(ride,action) {
     console.log('store saved');
     if (action == 'add') {
-      savedRides.push(parseInt(ride));
+      Ride.savedRides.push(parseInt(ride));
     } else if (action == 'remove') {
-      savedRides.splice(savedRides.indexOf(ride,1));
+      Ride.savedRides.splice(Ride.savedRides.indexOf(ride,1));
     }
     saveState();
   }
 
   function saveState() {
-    localStorage.setItem('savedRides',JSON.stringify(savedRides));
+    localStorage.setItem('savedRides',JSON.stringify(Ride.savedRides));
   }
 
   rideDetailView.loadSavedArray = function() {
     if(localStorage.getItem('savedRides') != null) {
       console.log('theres a saved ride');
-      savedRides = JSON.parse(localStorage.getItem('savedRides'));
-      console.log(savedRides);
+      Ride.savedRides = JSON.parse(localStorage.getItem('savedRides'));
+      console.log(Ride.savedRides);
     }
   };
 
@@ -148,6 +147,6 @@
     document.getElementById('heart').addEventListener('click',saveRide);
   };
 
-  module.rideView = rideView;
+  module.rideDetailView = rideDetailView;
 
 })(window);
