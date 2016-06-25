@@ -82,11 +82,13 @@
     </script>
 
     <script id="savedRidesTemplate" type="text/x-handlebars-template">
-      <div class="savedItem">
+      <div class="savedItem" data-id="{{id}}">
         <a href="/rides/{{id}}"><h2>{{name}}</h2></a>
         <img src="{{rideImage1}}"/>
-        <input class="rideComment" type="text" placeholder="add a note"/>
-        <input class="commentSubmit" type="submit" placeholder="save note" />
+        <div class="rideCommentContent">
+          <!-- ride comments go here if exist -->
+        </div>
+        <textarea class="rideComment" type="text" placeholder="add a note">{{notes}}</textarea>
       </div>
     </script>
   </head>
@@ -98,7 +100,7 @@
         <ul>
           <li ><a href="/"><i class="fa fa-bicycle fa-lg"></i></a></li>
           <li><a href="/rides">Rides</a></li>
-          <li><a href="/saved">Saved</a></li>
+          <li><a href="/saved">My rides</a></li>
           <li><a href="/admin">admin</a></li>
         </ul>
       </nav>

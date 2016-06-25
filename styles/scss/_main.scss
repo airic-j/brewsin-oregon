@@ -344,9 +344,16 @@ section {
     width: 45%;
     float: right;
     margin: 0 0 0 5%;
-    padding: 2px 2px 30px 2px;
+    padding: 2px 2px 200px 2px;
     display: inline-block;
-    border: 1px solid $primary-gray;
+    color: $primary-gray;
+    border: 1px $primary-gray;
+    white-space: normal;
+  }
+
+  .rideComment:focus {
+    color: $primary-black;
+    border: 2px solid $primary-gray;
   }
 
   .commentSubmit {

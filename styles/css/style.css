@@ -581,9 +581,14 @@ section {
   width: 45%;
   float: right;
   margin: 0 0 0 5%;
-  padding: 2px 2px 30px 2px;
+  padding: 2px 2px 200px 2px;
   display: inline-block;
-  border: 1px solid #a8a8a8; }
+  color: #a8a8a8;
+  border: 1px #a8a8a8;
+  white-space: normal; }
+#saved .rideComment:focus {
+  color: #585858;
+  border: 2px solid #a8a8a8; }
 #saved .commentSubmit {
   float: right;
   width: 25%;

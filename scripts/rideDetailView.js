@@ -7,10 +7,10 @@
     // console.log('using handlebars');
     var rideDetailTemplate = $('#rideDetailTemplate').html();
     var compiledDetailTemplate = Handlebars.compile(rideDetailTemplate);
-    console.log(this.description);
+    // console.log(this.description);
     this.description = marked(this.description);
     var html = compiledDetailTemplate(this);
-    console.log(this.description);
+    // console.log(this.description);
     return(html);
   };
 
@@ -23,7 +23,7 @@
   };
 
   rideDetailView.loadSaved = function() {
-    console.log('------- this ride ' + rideDetailToAppend.id);
+    // console.log('------- this ride ' + rideDetailToAppend.id);
     // console.log(Ride.savedRides);
     // console.log($.inArray(rideDetailToAppend.id,Ride.savedRides));
     if ($.inArray(rideDetailToAppend.id,Ride.savedRides)>-1) {
@@ -102,40 +102,36 @@
 
   function saveRide(e) {
     saveLink = document.getElementById('heart');
-    console.log(saveLink);
+    // console.log(saveLink);
     e.preventDefault();
     ride = e.target.baseURI.split('rides/')[1];
     if (saveLink.classList.contains('saved')) {
-      console.log('was saved, now remove ' + ride);
+      // console.log('was saved, now remove ' + ride);
       saveLink.classList.remove('saved');
       storeSaved(ride,'remove');
     }
     else {
-      console.log('wasnt saved, now save ' + ride);
+      // console.log('wasnt saved, now save ' + ride);
       saveLink.classList.add('saved');
       storeSaved(ride,'add');
     }
   }
 
   function storeSaved(ride,action) {
-    console.log('store saved');
+    // console.log('store saved');
     if (action == 'add') {
       Ride.savedRides.push(parseInt(ride));
     } else if (action == 'remove') {
       Ride.savedRides.splice(Ride.savedRides.indexOf(ride,1));
     }
-    saveState();
-  }
-
-  function saveState() {
     localStorage.setItem('savedRides',JSON.stringify(Ride.savedRides));
   }
 
   rideDetailView.loadSavedArray = function() {
     if(localStorage.getItem('savedRides') != null) {
-      console.log('theres a saved ride');
+      // console.log('theres a saved ride');
       Ride.savedRides = JSON.parse(localStorage.getItem('savedRides'));
-      console.log(Ride.savedRides);
+      // console.log(Ride.savedRides);
     }
   };
 
