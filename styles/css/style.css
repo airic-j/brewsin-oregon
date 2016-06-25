@@ -495,6 +495,8 @@ section {
     margin: 0 10px 0 0;
     text-align: left;
     display: inline-block; }
+  .ride .rideName:hover, .rideDetail .rideName:hover {
+    text-decoration: underline; }
   .ride .rideTeaser, .rideDetail .rideTeaser {
     color: #585858;
     font-size: 1.3em;

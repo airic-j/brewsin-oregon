@@ -193,6 +193,10 @@ section {
       display: inline-block;
     }
 
+    .rideName:hover {
+      text-decoration: underline;
+    }
+
     .rideTeaser {
       color: $primary-black;
       font-size: 1.3em;

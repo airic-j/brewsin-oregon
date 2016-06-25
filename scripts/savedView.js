@@ -1,12 +1,9 @@
 (function(module){
-  // console.log('it loads!');
 
   var savedView = {};
   var savedNotes = {};
-  // console.log(Ride.all);
 
   savedView.init = function() {
-    console.log('saved view init');
     $('section').hide();
     $('#saved').show();
     $('#savedContainer').empty();
@@ -15,7 +12,6 @@
   };
 
   Ride.prototype.savedToHtml = function() {
-    // console.log('saved to html');
     var savedTemplate = $('#savedRidesTemplate').html();
     var savedRidesTemplate = Handlebars.compile(savedTemplate);
     var html = savedRidesTemplate(this);
@@ -41,9 +37,7 @@
 
   savedView.appendRidesAndNotes = function() {
     savedView.loadNotes();
-    console.log('appending the rides');
     Ride.savedRides.forEach(function(ride){
-      console.log(Ride.all[ride -1]);
       $('#savedContainer').append(Ride.all[ride -1].savedToHtml());
     });
     savedView.bindCommentEvent();

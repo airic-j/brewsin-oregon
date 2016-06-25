@@ -102,7 +102,6 @@
 
   function saveRide(e) {
     saveLink = document.getElementById('heart');
-    // console.log(saveLink);
     e.preventDefault();
     ride = e.target.baseURI.split('rides/')[1];
     if (saveLink.classList.contains('saved')) {
@@ -122,7 +121,8 @@
     if (action == 'add') {
       Ride.savedRides.push(parseInt(ride));
     } else if (action == 'remove') {
-      Ride.savedRides.splice(Ride.savedRides.indexOf(ride,1));
+      index = Ride.savedRides.indexOf(ride);
+      Ride.savedRides.splice(index,1);
     }
     localStorage.setItem('savedRides',JSON.stringify(Ride.savedRides));
   }
