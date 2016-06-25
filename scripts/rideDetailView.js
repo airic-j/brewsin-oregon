@@ -21,10 +21,10 @@
 
   rideDetailView.loadSaved = function() {
     console.log('------- this ride ' + rideDetailToAppend.id);
-    console.log(Ride.savedRides);
-    console.log($.inArray(rideDetailToAppend.id,Ride.savedRides));
+    // console.log(Ride.savedRides);
+    // console.log($.inArray(rideDetailToAppend.id,Ride.savedRides));
     if ($.inArray(rideDetailToAppend.id,Ride.savedRides)>-1) {
-      console.log('this ride was saved');
+      // console.log('this ride was saved');
       document.getElementById('heart').classList.add('saved');
     }
   };
@@ -98,16 +98,17 @@
   };
 
   function saveRide(e) {
-    saveLink = e.target;
+    saveLink = document.getElementById('heart');
+    console.log(saveLink);
     e.preventDefault();
     ride = e.target.baseURI.split('rides/')[1];
     if (saveLink.classList.contains('saved')) {
-      console.log('was saved, now remove');
+      console.log('was saved, now remove ' + ride);
       saveLink.classList.remove('saved');
       storeSaved(ride,'remove');
     }
     else {
-      console.log('wasnt saved, now save');
+      console.log('wasnt saved, now save ' + ride);
       saveLink.classList.add('saved');
       storeSaved(ride,'add');
     }

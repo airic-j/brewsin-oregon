@@ -8,13 +8,14 @@
     <title>Tour de Hops</title>
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/icons/font-awesome/css/font-awesome.min.css">
 
     <script id="featuredRide" type="text/x-handlebars-template">
       <div class="row">
         <div class="columns twelve">
           <a href="/rides/{{id}}">
             <div class="featured">
-              <img src="/images/ride-images/road.jpg"/>
+              <img src="{{rideImage1}}"/>
               <div class="ride-teaser">
                 <span>Featured Ride</span>
                 <h3 class="teaser-title">{{name}}</h3>
@@ -53,8 +54,8 @@
       <div class="row">
         <div class="columns twelve center">
           <div class="rideDetail">
-            <h3 class="rideName">{{name}}</h3><span id="heart">heart</span>
-            <a href='#' id="heart"><i class="fa fa-camera-retro"></i></a>
+            <h3 class="rideName">{{name}}</h3>
+            <a href='#' id="heart"><i class="fa fa-heart-o fa-lg"></i></a>
             <ul id="rideNotes">
               <li>{{distance}} miles</li>
               <li>{{elevation}} feet elevation gain</li>
@@ -81,14 +82,8 @@
     </script>
 
     <script id="savedRidesTemplate" type="text/x-handlebars-template">
-      <div class="row">
-        <div class="columns twelve center">
-          {{name}}
-        </div>
-      </div>
+      <a href="/rides/{{id}}"><h4>{{name}}</h4></a>
     </script>
-
-
   </head>
 
   <body>
@@ -96,7 +91,7 @@
     <div class="columns whole ">
       <nav id="navLinks">
         <ul>
-          <li ><a href="/">TDH</a></li>
+          <li ><a href="/"><i class="fa fa-bicycle fa-lg"></i></a></li>
           <li><a href="/rides">Rides</a></li>
           <li><a href="/saved">Saved</a></li>
           <li><a href="/admin">admin</a></li>
@@ -129,7 +124,6 @@
   <section id="rideDetails">
     <div class="row">
       <div class="columns twelve">
-        <h2>Ride Details</h2>
         <!-- ride details to be populated here -->
       </div>
     </div>
@@ -140,8 +134,12 @@
     <div class="row">
       <div class="columns twelve">
         <h2>My saved rides</h2>
+        <div id="savedContainer">
+
+        </div>
       </div>
     </div>
+
   </section>
 
   <section id="admin">

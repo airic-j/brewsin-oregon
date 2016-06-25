@@ -191,7 +191,7 @@ section {
 
   #ridesTagLine {
     color: $primary-gray;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     font-size: 3.0em;
   }
 
@@ -294,6 +294,8 @@ section {
 
   #heart {
     width: 24px;
+    margin-top: 10px;
+    position: absolute;
   }
 
   #rideNotes {
@@ -310,7 +312,7 @@ section {
 
 }
 
-.saved {
+.saved i {
   color: red;
 }
 
