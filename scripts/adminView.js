@@ -1,6 +1,4 @@
 (function(module){
-  // console.log('adminview loads!');
-
   var adminView = {};
 
   adminView.init = function() {
@@ -8,6 +6,7 @@
     $('section').hide();
     $('#admin').show();
     $('#routeSubmit').click(newRide);
+    adminView.initMap();
   };
 
 // start map
@@ -15,7 +14,6 @@
 
   // initialize map and other details
   adminView.initMap = function() {
-    // console.log('initMap on adminpage called');
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer ({
     });
@@ -31,7 +29,6 @@
       calculateAndDisplayRoute(directionsService, directionsDisplay);
     };
 
-    // return directions on click
     document.getElementById('getDirections').addEventListener('click', onChangeHandler);
 
     // TODO make it possible to drag the directions
@@ -42,9 +39,7 @@
 
     var startAutocomplete = new google.maps.places.Autocomplete(startInput);
     var endAutocomplete = new google.maps.places.Autocomplete(endInput);
-
   };
-
 
   // display the route
   function calculateAndDisplayRoute(directionsService, directionsDisplay) {

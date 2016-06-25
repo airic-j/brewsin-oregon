@@ -590,8 +590,10 @@ section {
   margin: 10px 0 0 0;
   border: 1px solid #a8a8a8; }
 
-#admin input {
+#admin input, #admin #routeDifficulty {
   border: 1px solid #a8a8a8; }
+#admin #routeDifficulty {
+  width: 300px; }
 
 #createMap {
   float: left;
@@ -600,7 +602,7 @@ section {
 #createMap input {
   display: block;
   margin-bottom: 10px;
-  width: 90%; }
+  width: 100%; }
 
 #waypoints input {
   display: block; }
@@ -614,7 +616,7 @@ section {
   width: 40%;
   float: left; }
 
-#routeForm input[type=text] {
+#routeForm input[type=text], #routeDifficulty {
   display: block;
   width: 300px;
   margin-bottom: 5px; }
