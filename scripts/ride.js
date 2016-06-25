@@ -37,7 +37,7 @@
       'CREATE TABLE IF NOT EXISTS rides (' +
           'id INTEGER NOT NULL PRIMARY KEY, ' +
           'name VARCHAR(255) NOT NULL, ' +
-          'description VARCHAR(1000), ' +
+          'description TEXT(5000), ' +
           'teaser VARCHAR (150), ' +
           'elevation VARCHAR(255), ' +
           'difficulty VARCHAR(255), ' +
