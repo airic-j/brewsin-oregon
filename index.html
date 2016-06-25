@@ -15,11 +15,11 @@
         <div class="columns twelve">
           <a href="/rides/{{id}}">
             <div class="featured">
-              <img src="{{rideImage1}}"/>
-              <div class="ride-teaser">
-                <span>Featured Ride</span>
-                <h3 class="teaser-title">{{name}}</h3>
-                <p class="teaser-text">
+              <img id="featuredImg" src="{{rideImage1}}"/>
+              <div id="ride-teaser">
+                <span id="featuredTag">Featured Ride</span>
+                <h3 id="teaser-title">{{name}}</h3>
+                <p id="teaser-text">
                   {{teaser}}
                 </p>
               </div>
@@ -109,8 +109,8 @@
     <div id="home-header">
       <div class="row">
         <div class="columns twelve center welcome">
-          <h2>Tour de Hops</h2>
-          <a href="/rides"><button>Explore the rides</button></a>
+          <h2 id="title">Tour de Hops</h2>
+          <a href="/rides"><button id="cta">Explore the rides</button></a>
         </div>
       </div>
       <!-- featured ride renders here -->
@@ -188,7 +188,6 @@
     </div>
   </section>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your sites ID -->
     <script src='/vendor/scripts/jquery.js'></script>
     <script src='/vendor/scripts/handlebars.js'></script>
     <script src="/vendor/scripts/page.js"></script>
@@ -196,7 +195,6 @@
     <script src="/vendor/scripts/marked.js"></script>
 
     <script src="/scripts/webdb.js"></script>
-
     <script src="/scripts/ride.js"></script>
 
     <script src='/scripts/indexView.js'></script>

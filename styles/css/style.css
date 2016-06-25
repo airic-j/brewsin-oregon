@@ -366,11 +366,12 @@ html {
   font-family: 'Helvetica Neue', sans-serif;
   max-width: 100%; }
 
-a:visited {
-  color: #a8a8a8; }
-
-a {
+a, a:visited {
+  color: #a8a8a8;
   text-decoration: none; }
+
+a, p, span, h2, h3 {
+  font-family: helvetica; }
 
 section {
   display: none; }
@@ -381,31 +382,21 @@ section {
   height: 60px;
   text-align: left; }
 
-#title {
-  font-weight: 200;
-  font-size: 2.5em;
-  font-family: desdemona; }
-
 #navLinks {
   width: 100%;
   float: left;
-  font-weight: 300; }
-
-nav {
+  font-weight: 300;
   z-index: 100;
   position: relative; }
-  nav ul {
+  #navLinks ul {
     list-style-type: none;
     overflow: auto;
-    padding-left: 0;
-    width: 90%; }
-  nav li {
+    padding-left: 0; }
+  #navLinks li {
     float: left;
     margin-right: 20px;
     text-align: left;
     font-size: 1.3em; }
-  nav li a {
-    color: #a8a8a8; }
 
 #home-header {
   height: 100%;
@@ -417,7 +408,7 @@ nav {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/hero-v2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("../../images/hero-v2.jpg");
   background-blend-mode: darken;
   background-repeat: no-repeat;
   background-position: center; }
@@ -428,9 +419,8 @@ nav {
   margin-top: 40px;
   font-family: helvetica;
   font-weight: 300;
-  margin-top: 50px;
-  margin-bottom: 100px; }
-  .welcome h2 {
+  margin-top: 50px; }
+  .welcome #title {
     font-size: 7.0em;
     font-weight: 200;
     margin-bottom: 10px;
@@ -439,7 +429,7 @@ nav {
     font-size: 2.5em;
     font-family: matura;
     display: block; }
-  .welcome button {
+  .welcome #cta {
     background-color: Transparent;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -451,29 +441,23 @@ nav {
     border: 1px solid #03b18d;
     margin-top: 30px;
     padding: 15px 0; }
-  .welcome p {
-    font-size: 1.2em;
-    width: 75%;
-    margin: 30px auto; }
-  .welcome a {
-    color: #ffffff; }
 
 .featured {
   color: #ffffff;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   z-index: 100;
   width: 75%;
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5); }
-  .featured img {
+  .featured #featuredImg {
     width: 25%;
     display: inline; }
-  .featured .ride-teaser {
+  .featured #ride-teaser {
     width: 75%;
     float: right;
     padding: 0px 20px; }
-    .featured .ride-teaser span {
+    .featured #ride-teaser #featuredTag {
       width: 200px;
       text-align: left;
       display: block;
@@ -481,9 +465,12 @@ nav {
       font-size: 1.2em;
       font-weight: 200;
       padding-bottom: 50px; }
-    .featured .ride-teaser .teaser-title {
+    .featured #ride-teaser #teaser-title {
       font-size: 2.0em;
       margin: -40px 0 0 0; }
+    .featured #ride-teaser #teaser-text {
+      font-size: 1.1em;
+      font-weight: 200; }
 
 #ridesTagLine {
   color: #a8a8a8;
@@ -517,19 +504,15 @@ nav {
   .ride .rideLocation, .rideDetail .rideLocation {
     font-size: 1.0em;
     color: #a8a8a8; }
-  .ride a, .rideDetail a {
-    color: #a8a8a8; }
-  .ride ul, .rideDetail ul {
+  .ride .rideBullets, .ride #rideNotes, .ride #rideLocations, .rideDetail .rideBullets, .rideDetail #rideNotes, .rideDetail #rideLocations {
     padding-left: 0;
     list-style-type: none;
     margin: 20px auto;
     width: 100%;
     display: inline-block; }
-    .ride ul li, .rideDetail ul li {
+    .ride .rideBullets li, .ride #rideNotes li, .ride #rideLocations li, .rideDetail .rideBullets li, .rideDetail #rideNotes li, .rideDetail #rideLocations li {
       float: left;
       margin: 10px 40px 0 0; }
-  .ride .rideImages, .rideDetail .rideImages {
-    display: block; }
   .ride .rideImages img, .rideDetail .rideImages img {
     width: 31%;
     max-width: 31%;
