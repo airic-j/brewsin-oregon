@@ -62,15 +62,15 @@
               <li>{{difficulty}}</li>
               <li id="currentTemp"></li>
             </ul>
-            <ul id="rideLocations">
-              <li>{{start}} to {{end}}</li>
-              <li>Make stops in</li>
-            </ul>
-            <p id="rideDescription">{{description}}</p>
             <div id="rideDetailMap">
-
+            <!-- map goes here -->
             </div>
-
+            <ul id="rideLocations">
+              <li><b>Route</b></li>
+              <li>{{start}} to {{end}}</li>
+              <li><b>Make stops in</b></li>
+            </ul>
+            <div id="rideDescription">{{{description}}}</div>
             <div class="rideImages">
               <img src="{{rideImage1}}"/>
               <img src="{{rideImage2}}"/>
@@ -82,7 +82,11 @@
     </script>
 
     <script id="savedRidesTemplate" type="text/x-handlebars-template">
-      <a href="/rides/{{id}}"><h4>{{name}}</h4></a>
+      <div class="savedItem">
+        <a href="/rides/{{id}}"><h2>{{name}}</h2></a>
+        <img src="{{rideImage1}}"/>
+        <input class="rideComment" type="text" placeholder="add a note"/>
+      </div>
     </script>
   </head>
 
@@ -133,8 +137,8 @@
   <section id="saved">
     <div class="row">
       <div class="columns twelve">
-        <h2>My saved rides</h2>
-        <div id="savedContainer">
+        <h2 id="savedTitle">My saved rides</h2>
+        <div class="savedContainer">
 
         </div>
       </div>
@@ -189,6 +193,7 @@
     <script src='/vendor/scripts/handlebars.js'></script>
     <script src="/vendor/scripts/page.js"></script>
     <script src="/vendor/scripts/html5sql.js"></script>
+    <script src="/vendor/scripts/marked.js"></script>
 
     <script src="/scripts/webdb.js"></script>
 

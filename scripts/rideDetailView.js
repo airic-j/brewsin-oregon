@@ -7,7 +7,10 @@
     // console.log('using handlebars');
     var rideDetailTemplate = $('#rideDetailTemplate').html();
     var compiledDetailTemplate = Handlebars.compile(rideDetailTemplate);
+    console.log(this.description);
+    this.description = marked(this.description);
     var html = compiledDetailTemplate(this);
+    console.log(this.description);
     return(html);
   };
 

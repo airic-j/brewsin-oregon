@@ -30,7 +30,7 @@
   savedView.appendRides = function() {
     // console.log(Ride.savedRides);
     Ride.savedRides.forEach(function(ride){
-      $('#savedContainer').append(Ride.all[ride -1].savedToHtml());
+      $('.savedContainer').append(Ride.all[ride -1].savedToHtml());
     });
   };
 
