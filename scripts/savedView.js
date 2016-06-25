@@ -5,9 +5,11 @@
   // console.log(Ride.all);
 
   savedView.init = function() {
+    console.log('saved view init');
     $('section').hide();
     $('#saved').show();
     $('#savedContainer').empty();
+    console.log('----- should empty saved');
     loadSavedArray();
     Ride.fetchAll(savedView.appendRides);
   };
@@ -30,7 +32,7 @@
   savedView.appendRides = function() {
     console.log(Ride.savedRides);
     Ride.savedRides.forEach(function(ride){
-      $('.savedContainer').append(Ride.all[ride -1].savedToHtml());
+      $('#savedContainer').append(Ride.all[ride -1].savedToHtml());
     });
   };
 

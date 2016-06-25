@@ -400,6 +400,12 @@ section {
 
 // admin page //
 
+#admin {
+  input {
+    border: 1px solid $primary-gray;
+  }
+}
+
 #createMap {
   float: left;
   width: 55%;
