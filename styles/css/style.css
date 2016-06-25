@@ -587,15 +587,25 @@ nav {
 
 #saved .savedItem {
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  float: left; }
   #saved .savedItem img {
-    width: 50%; }
+    width: 50%;
+    float: left; }
 #saved #savedTitle {
   color: #585858; }
 #saved .rideComment {
-  width: 50%;
+  width: 45%;
+  float: right;
+  margin: 0 0 0 5%;
+  padding: 2px 2px 30px 2px;
+  display: inline-block;
+  border: 1px solid #a8a8a8; }
+#saved .commentSubmit {
+  float: right;
+  width: 25%;
   margin: 10px 0 0 0;
-  padding: 0 0 30px 0; }
+  border: 1px solid #a8a8a8; }
 
 #createMap {
   float: left;
@@ -640,6 +650,15 @@ nav {
   .ride .rideImages img, .rideDetail .rideImages img {
     width: 100%;
     max-width: 100%;
-    margin-top: 10px; } }
+    margin-top: 10px; }
+
+  #saved .savedItem img {
+    width: 100%;
+    float: none; }
+  #saved .savedItem .rideComment, #saved .savedItem .commentSubmit {
+    width: 100%;
+    margin: 10px auto;
+    float: none;
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */
