@@ -15,7 +15,6 @@
   };
 
   rideDetailView.appendRides = function(id) {
-    // console.log('populate the rides by appending');
     // put each JSON element into the projects array after making it a Project object
     $('#rideDetails').empty();
     rideDetailToAppend = Ride.all[id-1];
@@ -23,11 +22,7 @@
   };
 
   rideDetailView.loadSaved = function() {
-    // console.log('------- this ride ' + rideDetailToAppend.id);
-    // console.log(Ride.savedRides);
-    // console.log($.inArray(rideDetailToAppend.id,Ride.savedRides));
     if ($.inArray(rideDetailToAppend.id,Ride.savedRides)>-1) {
-      // console.log('this ride was saved');
       document.getElementById('heart').classList.add('saved');
     }
   };
@@ -35,15 +30,12 @@
   rideDetailView.appendStopovers = function(waypoints) {
     stopoverHTML = document.getElementById('rideLocations');
     if(waypoints.length>0) {
-      // console.log('has waypoints, append');
       for(i = 0; i < waypoints.length; i ++) {
         var li = document.createElement('li');
-        // console.log(waypoints[i].location);
         li.innerHTML = waypoints[i].location;
         stopoverHTML.appendChild(li);
       }
     } else {
-      // console.log('no waypoints, empty');
       stopoverHTML.innerHTML = '';
     }
   };
@@ -129,9 +121,7 @@
 
   rideDetailView.loadSavedArray = function() {
     if(localStorage.getItem('savedRides') != null) {
-      // console.log('theres a saved ride');
       Ride.savedRides = JSON.parse(localStorage.getItem('savedRides'));
-      // console.log(Ride.savedRides);
     }
   };
 
@@ -145,6 +135,7 @@
     rideDetailView.getWeather();
     rideDetailView.initMap();
     document.getElementById('heart').addEventListener('click',saveRide);
+    window.scrollTo(0, 0);
   };
 
   module.rideDetailView = rideDetailView;
